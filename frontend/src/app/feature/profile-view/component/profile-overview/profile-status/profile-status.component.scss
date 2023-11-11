@@ -1,0 +1,40 @@
+@import "utils/variables";
+
+.status {
+  display: inline-block;
+  background-color: $color-bright-white;
+  box-shadow: rgba(99, 99, 99, 0.2) 0 2px 8px 0;
+  height: 1.5rem;
+  line-height: 1.5rem;
+  padding: $gap-1 $gap-4;
+  border-radius: 500px;
+  margin: auto;
+  font-weight: 500;
+  text-transform: uppercase;
+  cursor: default;
+}
+
+@mixin status($color) {
+  color: $color;
+
+  span {
+    display: inline-block;
+    width: 0.7rem;
+    height: 0.7rem;
+    border-radius: 100%;
+    margin-right: $gap-2;
+    background-color: $color;
+  }
+}
+
+.disabled {
+  @include status($color-red)
+}
+
+.unverified {
+  @include status($color-orange)
+}
+
+.active {
+  @include status($color-primary)
+}

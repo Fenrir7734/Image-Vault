@@ -1,0 +1,29 @@
+@import "utils/variables";
+
+.sidenav-btn {
+  color: $color-white !important;
+  width: 100%;
+  justify-content: left;
+  padding: $gap-5 $gap-4;
+  text-transform: capitalize;
+  font-size: $font-size-2;
+  background-color: transparent;
+  border-left: 2px solid transparent;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  transition: linear 0.2s;
+
+  & > *:nth-child(3) {
+    margin-left: $gap-4;
+  }
+
+  &:hover {
+    color: rgba($color-white, 0.7) !important;
+    cursor: pointer;
+  }
+
+  &.active {
+    color: $color-primary !important;
+    border-left: 2px solid $color-primary;
+  }
+}

@@ -1,0 +1,21 @@
+@import "utils/variables";
+
+.heading-primary {
+  display: block;
+  color: $color-gray;
+  text-transform: uppercase;
+  margin-bottom: $gap-7;
+  backface-visibility: hidden;
+  font-size: $font-size-6;
+  font-weight: 200;
+  letter-spacing: 0.4rem;
+}
+
+.heading-secondary {
+  display: inline-block;
+  color: $color-black;
+  margin-bottom: $gap-3;
+  letter-spacing: .1rem;
+  font-size: $font-size-5;
+  font-weight: 700;
+}

@@ -1,0 +1,26 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/imagevault
+    username: postgres
+    password: admin
+    jooq:
+      sql-dialect: postgres
+  jackson:
+    mapper:
+      default-view-inclusion: true
+
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+    operations-sorter: method
+
+jwt:
+  secret: 'FZNdMfiY82GLxjG6WF77xuN34E8izBFqatWVY5hU1Pv0LxeLLZjAkh7dKi0Z'
+  expiration: 172800000
+
+logging:
+  level:
+    org:
+      jooq:
+        tools:
+          LoggerListener: DEBUG

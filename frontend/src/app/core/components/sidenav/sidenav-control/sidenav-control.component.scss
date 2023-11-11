@@ -1,0 +1,9 @@
+@import "components/button";
+@import "utils/variables";
+
+.sidenav-control-container {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  overflow: hidden;
+}

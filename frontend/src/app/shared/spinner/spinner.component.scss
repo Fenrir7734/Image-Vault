@@ -1,0 +1,47 @@
+@import "utils/variables";
+
+$z-index: 1000;
+$spinner-size: 7rem;
+
+.mat-mdc-progress-spinner {
+  --mdc-circular-progress-active-indicator-color: #{$color-primary-dark} !important;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: $z-index;
+  background-color: rgb($color-black, 0.7);
+}
+
+.spinner-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-$spinner-size / 2) translateY(-$spinner-size / 2);
+  z-index: $z-index;
+
+  &--spinner {
+    width: $spinner-size !important;
+    height: $spinner-size !important;
+    border-radius: 100%;
+    background-color: rgb($color-black, 0.9);
+  }
+
+  &--text {
+    min-width: $spinner-size;
+    margin-top: 1rem;
+    padding: 0.25rem;
+    border-radius: 0.5rem;
+    text-align: center;
+    color: $color-white;
+    background-color: rgb($color-black, 0.9);
+
+    &:empty {
+      display: none;
+    }
+  }
+}

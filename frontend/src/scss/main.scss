@@ -1,0 +1,10 @@
+@import "base/reset";
+@import "base/typography";
+@import "components/button";
+@import "components/card";
+@import "utils/variables";
+
+html,
+body {
+  background-color: $color-white;
+}

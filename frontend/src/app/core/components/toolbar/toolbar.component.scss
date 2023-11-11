@@ -1,0 +1,20 @@
+@import "../../../../scss/utils/variables";
+
+.toolbar-container {
+  display: flex;
+  justify-content: space-between;
+  height: 3.5rem;
+  background-color: $color-primary;
+
+  &__menu {
+    color: $color-white;
+  }
+
+  &__logo {
+    max-width: 12rem;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}

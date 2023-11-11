@@ -1,0 +1,65 @@
+@import "utils/variables";
+@import "utils/mixins";
+
+$avatar-size: 4rem;
+
+.sidenav-user-container {
+  display: flex;
+  align-items: center;
+  height: 5rem;
+  padding: $gap-4;
+  gap: $gap-4;
+  border-bottom: 1px solid $color-gray;
+
+  &__avatar {
+    width: $avatar-size;
+    height: $avatar-size;
+    border: 0.2rem solid rgb($color-gray, 0.4);
+    transition: linear 0.2s;
+    border-radius: 100%;
+    background-color: $color-white;
+
+    &:hover {
+      cursor: pointer;
+      border-color: rgb($color-gray, 0.7);
+    }
+
+    &.avatar-active {
+      border-color: $color-primary;
+    }
+
+    img {
+      width: $avatar-size;
+      height: $avatar-size;
+      border-radius: 100%;
+    }
+  }
+
+  &__user {
+    color: $color-white;
+
+    &--username {
+      @include no-overflow();
+      max-width: 10rem;
+      font-size: 18px;
+      font-weight: 500;
+      margin-bottom: 0.2rem;
+      transition: linear 0.2s;
+
+      &:hover {
+        cursor: pointer;
+        color: rgba($color-white, 0.7);
+      }
+
+      &.username-active {
+        color: $color-primary;
+      }
+    }
+
+    &--role {
+      font-size: 12px;
+      font-weight: lighter;
+      text-transform: uppercase;
+    }
+  }
+}

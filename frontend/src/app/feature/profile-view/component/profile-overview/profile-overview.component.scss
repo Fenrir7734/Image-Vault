@@ -1,0 +1,27 @@
+@import "base/typography";
+@import "utils/mixins";
+@import "utils/variables";
+
+.profile-overview-container {
+  display: flex;
+  padding: $gap-4;
+  gap: $gap-4;
+
+  &__info {
+    margin: auto auto auto $gap-4;
+
+    &--username {
+      word-break: break-all;
+    }
+
+    &--role {
+      margin-bottom: $gap-3;
+      color: $color-gray;
+      font-size: $font-size-3;
+    }
+
+    &--status {
+      margin-top: $gap-3;
+    }
+  }
+}

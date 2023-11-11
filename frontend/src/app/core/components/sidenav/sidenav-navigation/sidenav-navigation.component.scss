@@ -1,0 +1,12 @@
+@import "components/button";
+@import "utils/mixins";
+
+.sidenav-navigation-container {
+  @include hide-scrollbar();
+  display: block;
+  position: absolute;
+  overflow-y: scroll;
+  top: 8.5rem;
+  bottom: 7rem;
+  width: 100%;
+}

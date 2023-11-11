@@ -1,0 +1,10 @@
+<div class="sidenav-control-container">
+  <button mat-button class="sidenav-btn" [routerLink]="['/settings']" routerLinkActive="active">
+    <mat-icon>settings</mat-icon>
+    <span>{{ 'SIDENAV.settings' | translate }}</span>
+  </button>
+  <button mat-button class="sidenav-btn" (click)="logout()">
+    <mat-icon>logout</mat-icon>
+    <span>{{ 'SIDENAV.logout' | translate }}</span>
+  </button>
+</div>

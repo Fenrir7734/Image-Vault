@@ -1,0 +1,22 @@
+<div class="container">
+  <div class="translate">
+    <app-translate></app-translate>
+  </div>
+  <img class="logo" src="../../../../assets/logo/iv-logo-large-white.png" alt="logo">
+
+  <div class="sso-container">
+    <button mat-flat-button class="icon-button google" (click)="auth.redirectToGoogleLogin()">
+      <div class="content">
+        <img class="icon" src="../../../../assets/img/google-logo.png" alt="google">
+        <span>{{ 'AUTH.google-login' | translate }}</span>
+      </div>
+    </button>
+    <button mat-flat-button class="icon-button facebook" (click)="auth.redirectToFacebookLogin()">
+      <div class="content">
+        <img class="icon" src="../../../../assets/img/facebook-icon-white-png.png" alt="google">
+        <span>{{ 'AUTH.facebook-login' | translate }}</span>
+      </div>
+    </button>
+  </div>
+
+</div>

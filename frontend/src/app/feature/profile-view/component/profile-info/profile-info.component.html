@@ -1,0 +1,28 @@
+<div class="card">
+  <div class="card__heading">
+    <mat-icon>account_circle</mat-icon>
+    <span>{{ 'PROFILE-VIEW.PROFILE-INFO.profile-info' | translate }}</span>
+  </div>
+  <div class="card__content">
+    <div class="card__content__row">
+      <span>{{ 'PROFILE-VIEW.PROFILE-INFO.username' | translate }}</span>
+      <span>{{user.name}}</span>
+    </div>
+    <div class="card__content__row">
+      <span>{{ 'PROFILE-VIEW.PROFILE-INFO.external-name' | translate }}</span>
+      <span>{{user.externalName}}</span>
+    </div>
+    <div class="card__content__row">
+      <span>{{ 'PROFILE-VIEW.PROFILE-INFO.email' | translate }}</span>
+      <span>{{user.email}}</span>
+    </div>
+    <div class="card__content__row">
+      <span>{{ 'PROFILE-VIEW.PROFILE-INFO.last-update-at' | translate }}</span>
+      <span>{{user.updatedAt | date: 'yyyy-MM-dd HH:mm:ss' }}</span>
+    </div>
+    <div class="card__content__row">
+      <span>{{ 'PROFILE-VIEW.PROFILE-INFO.created-at' | translate }}</span>
+      <span>{{user.createdAt | date: 'yyyy-MM-dd HH:mm:ss' }}</span>
+    </div>
+  </div>
+</div>

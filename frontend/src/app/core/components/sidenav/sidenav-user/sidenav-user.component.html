@@ -1,0 +1,13 @@
+<div *ngIf="user" class="sidenav-user-container">
+  <div class="sidenav-user-container__avatar" [routerLink]="['/profile/me']" routerLinkActive="avatar-active">
+    <img src="assets/img/avatar-placeholder.png">
+  </div>
+  <div class="sidenav-user-container__user">
+    <div class="sidenav-user-container__user--username" [routerLink]="['/profile/me']" routerLinkActive="username-active" [matTooltip]="username" appIsEllipsisActive>
+      {{ username }}
+    </div>
+    <div class="sidenav-user-container__user--role">
+      {{ user.role }}
+    </div>
+  </div>
+</div>

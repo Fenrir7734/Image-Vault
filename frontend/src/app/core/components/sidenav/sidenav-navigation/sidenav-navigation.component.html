@@ -1,0 +1,14 @@
+<div class="sidenav-navigation-container">
+  <button mat-button class="sidenav-btn" [routerLink]="['/home']" routerLinkActive="active">
+    <mat-icon>home</mat-icon>
+    <span>{{ 'SIDENAV.home' | translate }}</span>
+  </button>
+  <button mat-button class="sidenav-btn" [routerLink]="['/albums']" routerLinkActive="active">
+    <mat-icon>folder</mat-icon>
+    <span>{{ 'SIDENAV.albums' | translate }}</span>
+  </button>
+  <button mat-button class="sidenav-btn" [routerLink]="['/gallery']" routerLinkActive="active">
+    <mat-icon>photo</mat-icon>
+    <span>{{ 'SIDENAV.gallery' | translate }}</span>
+  </button>
+</div>

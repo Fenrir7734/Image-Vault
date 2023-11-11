@@ -1,0 +1,35 @@
+{
+  "AUTH": {
+    "google-login": "Login with Google",
+    "facebook-login": "Login with Facebook"
+  },
+  "SIDENAV": {
+    "home": "Home Page",
+    "albums": "Albums",
+    "gallery": "Gallery",
+    "settings": "Settings",
+    "logout": "Logout"
+  },
+  "SPINNER": {
+    "fetching": "Fetching",
+    "sending": "Sending"
+  },
+  "PROFILE-VIEW": {
+    "AVATAR": {
+      "change-avatar": "Change avatar"
+    },
+    "PROFILE-INFO": {
+      "profile-info": "Profile Info",
+      "username": "Username",
+      "external-name": "Extername name",
+      "email": "Email",
+      "last-update-at": "Last update at",
+      "created-at": "Created at"
+    }
+  },
+  "ROLE": {
+    "ADMIN": "Admin",
+    "USER": "User",
+    "VIEWER": "Viewer"
+  }
+}

@@ -1,0 +1,15 @@
+@import "utils/variables";
+@import "components/card";
+
+.profile-container {
+  display: flex;
+  flex-direction: column;
+  padding: $gap-7;
+  gap: $gap-3;
+}
+
+@media only screen and (max-width: $md) {
+  .profile-container {
+    padding: $gap-3;
+  }
+}

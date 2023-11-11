@@ -1,0 +1,35 @@
+{
+  "AUTH": {
+    "google-login": "Zaloguj z Google",
+    "facebook-login": "Zaloguj z Facebook"
+  },
+  "SIDENAV": {
+    "home": "Strona Główna",
+    "albums": "Albumy",
+    "gallery": "Gallery",
+    "settings": "Ustawienia",
+    "logout": "Wyloguj"
+  },
+  "SPINNER": {
+    "fetching": "Ładowanie",
+    "sending": "Wysyłanie"
+  },
+  "PROFILE-VIEW": {
+    "AVATAR": {
+      "change-avatar": "Zmień avatar"
+    },
+    "PROFILE-INFO": {
+      "profile-info": "Informacje o profilu",
+      "username": "Nazwa użytkownika",
+      "external-name": "Nazwa zewnętrzna",
+      "email": "Adres e-mail",
+      "last-update-at": "Data ostatniej aktualizacji",
+      "created-at": "Data utworzenia"
+    }
+  },
+  "ROLE": {
+    "ADMIN": "Administrator",
+    "USER": "Użytkownik",
+    "VIEWER": "Przeglądacz"
+  }
+}

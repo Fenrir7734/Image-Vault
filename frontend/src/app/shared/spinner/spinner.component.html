@@ -1,0 +1,7 @@
+<div *ngIf="loading">
+  <div class="overlay"></div>
+  <div class="spinner-container">
+    <mat-spinner class="spinner-container--spinner"></mat-spinner>
+    <div class="spinner-container--text">{{ text | translate }}</div>
+  </div>
+</div>

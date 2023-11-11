@@ -1,0 +1,8 @@
+<div *ngIf="user$ | async as user" class="profile-container">
+  <div class="profile-container__details">
+    <app-profile-overview [user]="user"></app-profile-overview>
+  </div>
+  <div class="profile-container__cards">
+    <app-profile-info [user]="user"></app-profile-info>
+  </div>
+</div>

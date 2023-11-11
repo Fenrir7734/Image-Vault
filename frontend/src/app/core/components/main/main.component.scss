@@ -1,0 +1,16 @@
+@import "utils/variables";
+
+.sidenav-container {
+  position: absolute;
+  top: 3.5rem;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: $color-white;
+
+  &__content {
+    width: 17rem;
+    background-color: $color-black;
+    overflow: hidden;
+  }
+}

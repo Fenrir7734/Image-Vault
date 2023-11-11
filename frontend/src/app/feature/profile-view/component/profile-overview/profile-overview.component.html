@@ -1,0 +1,8 @@
+<div class="profile-overview-container">
+  <app-profile-avatar avatar="assets/img/avatar-placeholder.png"></app-profile-avatar>
+  <div class="profile-overview-container__info">
+    <div class="profile-overview-container__info--username heading-secondary">{{ username }}</div>
+    <div class="profile-overview-container__info--role">{{ 'ROLE.' + user.role | translate }}</div>
+    <app-profile-status class="profile-overview-container__info--status" [enabled]="user.enabled" [verified]="user.verified"></app-profile-status>
+  </div>
+</div>
