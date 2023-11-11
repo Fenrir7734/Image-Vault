@@ -59,7 +59,7 @@ public class OAuth2UserService extends DefaultOAuth2UserService {
 
         if (!oauth2Provider.equals(userAuthType)) {
             throw new OAuth2AuthenticationProcessingException(
-                    EMAIL_ALREADY_IN_USE, ErrorCode.EMAIL_USED_WITH_DIFFERENT_OAUTH_PROVIDER);
+                    EMAIL_ALREADY_IN_USE, ErrorCode.EMAIL_USED_WITH_DIFFERENT_OAUTH_PROVIDER_ERROR);
         }
         return user;
     }

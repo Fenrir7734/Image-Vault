@@ -9,6 +9,7 @@ import java.util.Optional;
 public interface UserRepository extends JpaRepository<UserEntity, Long> {
 
     Optional<UserEntity> findByEmail(String email);
+    boolean existsByEmail(String email);
 
     @Query("select case when count(u) > 0 then true else false end from UserEntity u")
     boolean existsAnyUser();

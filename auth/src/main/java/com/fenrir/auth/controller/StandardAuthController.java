@@ -1,6 +1,7 @@
 package com.fenrir.auth.controller;
 
 import com.fenrir.auth.dto.request.RegisterRequest;
+import com.fenrir.auth.service.StandardAuthService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -13,10 +14,11 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/api/auth")
 @RequiredArgsConstructor
 public class StandardAuthController {
+    private final StandardAuthService standardAuthService;
 
     @PostMapping("/register")
     ResponseEntity<Void> register(@RequestBody @Valid RegisterRequest request) {
-        System.out.println(request);
-        return null;
+        standardAuthService.registerUser(request);
+        return ResponseEntity.ok().build();
     }
 }

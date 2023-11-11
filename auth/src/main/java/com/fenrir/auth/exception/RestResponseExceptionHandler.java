@@ -1,7 +1,9 @@
 package com.fenrir.auth.exception;
 
 import com.fenrir.auth.exception.exceptions.DisabledException;
+import com.fenrir.auth.exception.exceptions.DuplicateCredentialsException;
 import com.fenrir.auth.exception.exceptions.OAuth2AuthenticationProcessingException;
+import com.fenrir.auth.exception.exceptions.PasswordMismatchException;
 import com.fenrir.auth.exception.exceptions.StandardException;
 import com.fenrir.auth.exception.exceptions.UnverifiedException;
 import com.fenrir.auth.exception.message.ConstraintViolationErrorMessage;
@@ -57,6 +59,17 @@ public class RestResponseExceptionHandler {
                 ex.getErrorCode()
         );
         return new ResponseEntity<>(message, HttpStatus.INTERNAL_SERVER_ERROR);
+    }
+
+    @ExceptionHandler({ PasswordMismatchException.class, DuplicateCredentialsException.class })
+    public ResponseEntity<ErrorMessage> handleCredentialsException(StandardException ex, WebRequest request) {
+        ErrorMessage message = new ErrorMessage(
+                HttpStatus.CONFLICT.value(),
+                LocalDateTime.now(),
+                ex.getMessage(),
+                ex.getErrorCode()
+        );
+        return new ResponseEntity<>(message, HttpStatus.CONFLICT);
     }
 
     @ExceptionHandler({ ConstraintViolationException.class, MethodArgumentNotValidException.class })
