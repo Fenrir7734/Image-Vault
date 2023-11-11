@@ -6,11 +6,9 @@ import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
-import lombok.ToString;
 
 @AllArgsConstructor
 @Getter
-@ToString
 public class RegisterRequest {
     @NotBlank
     @Size(min = 2, max = 100)

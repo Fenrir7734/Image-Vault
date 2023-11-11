@@ -1,11 +1,13 @@
 package com.fenrir.auth.service;
 
+import com.fenrir.auth.dto.request.ExchangeRequest;
 import com.fenrir.auth.dto.request.RegisterRequest;
 import com.fenrir.auth.entity.RoleEntity;
 import com.fenrir.auth.entity.UserEntity;
 import com.fenrir.auth.enums.Role;
 import com.fenrir.auth.exception.exceptions.DuplicateCredentialsException;
 import com.fenrir.auth.exception.exceptions.PasswordMismatchException;
+import com.fenrir.auth.exception.exceptions.WrongCredentialsException;
 import com.fenrir.auth.repository.RoleRepository;
 import com.fenrir.auth.repository.UserRepository;
 import com.fenrir.auth.security.AuthenticationFacade;
@@ -14,6 +16,8 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
+import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
@@ -56,5 +60,18 @@ public class StandardAuthService {
     private RoleEntity getUserRole(boolean existsAnyUser) {
         final Role role = existsAnyUser ? Role.VIEWER : Role.ADMIN;
         return roleRepository.getByName(role.getName());
+    }
+
+    @Transactional
+    public String exchangeCredentials(ExchangeRequest exchangeRequest) {
+        Optional<UserEntity> user = userRepository.findByEmail(exchangeRequest.getEmail());
+        if (user.isEmpty() || !isPasswordCorrect(exchangeRequest, user.get())) {
+            throw new WrongCredentialsException();
+        }
+        return jwtUtils.generateAccessToken(user.get());
+    }
+
+    private boolean isPasswordCorrect(ExchangeRequest exchangeRequest, UserEntity user) {
+        return passwordEncoder.matches(exchangeRequest.getPassword(), user.getPassword());
     }
 }

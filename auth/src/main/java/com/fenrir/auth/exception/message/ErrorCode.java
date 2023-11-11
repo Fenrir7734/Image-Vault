@@ -12,6 +12,7 @@ public class ErrorCode {
     public static final String VALIDATION_ERROR = "AUTH-1006";
     public static final String DUPLICATE_CREDENTIALS_ERROR = "AUTH-1007";
     public static final String PASSWORD_MISMATCH_ERROR = "AUTH-1008";
+    public static final String WRONG_CREDENTIALS_ERROR = "AUTH-1009";
 
     public static final String INTERNAL_SERVER_ERROR = "AUTH-9999";
 }

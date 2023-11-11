@@ -63,7 +63,7 @@ export class AuthService {
   }
 
   private exchange(): Observable<HttpResponse<Response>> {
-    return this.httpClient.get<Response>(`${environment.baseUrl}/auth/api/exchange`, { observe: 'response' });
+    return this.httpClient.get<Response>(`${environment.baseUrl}/auth/api/oauth/exchange`, { observe: 'response' });
   }
 
   redirectToGoogleLogin(): void {

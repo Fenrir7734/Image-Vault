@@ -27,7 +27,8 @@ class WebSecurityConfiguration {
                         .userInfoEndpoint(userInfo -> userInfo.userService(oAuth2UserService))
                 ).authorizeHttpRequests(auth -> auth
                         .requestMatchers("/", "/**.html", "/**.js").permitAll()
-                        .requestMatchers("/api/auth/**").permitAll()
+                        .requestMatchers("/api/standard/**").permitAll()
+                        .requestMatchers("/api/oauth/**").authenticated()
                         .requestMatchers("/api/**").authenticated()
                         .anyRequest().permitAll()
                 ).exceptionHandling(exec -> exec.authenticationEntryPoint(unauthorizedEntryPoint))
