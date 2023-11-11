@@ -25,6 +25,7 @@ public class UserEntity {
     private String externalName;
     private String name;
     private String email;
+    private String password;
     private Boolean verified;
     private Boolean enabled;
     private Long roleId;
