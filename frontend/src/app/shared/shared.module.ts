@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { SpinnerComponent } from './spinner/spinner.component';
+import { SpinnerComponent } from './components/spinner/spinner.component';
 import { MaterialModule } from './material.module';
 import { IsAdminDirective } from './directives/is-admin.directive';
 import { IsUserDirective } from './directives/is-user.directive';
@@ -9,10 +9,12 @@ import { CommonModule } from '@angular/common';
 import { AddClassOnClickDirective } from './directives/add-class-on-click.directive';
 import { TranslateModule } from '@ngx-translate/core';
 import { CapitalizedPipe } from './pipe/capitalized.pipe';
+import { NotificationComponent } from './components/notification/notification.component';
 
 @NgModule({
   declarations: [
     SpinnerComponent,
+    NotificationComponent,
     IsAdminDirective,
     IsUserDirective,
     IsEllipsisActiveDirective,
@@ -26,6 +28,7 @@ import { CapitalizedPipe } from './pipe/capitalized.pipe';
     HttpClientModule,
     TranslateModule,
     SpinnerComponent,
+    NotificationComponent,
     IsAdminDirective,
     IsUserDirective,
     IsEllipsisActiveDirective,

@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { map, Observable } from 'rxjs';
 import { CurrentUser } from '../models/current-user';
-import { SpinnerService } from '../../shared/spinner/spinner.service';
-import { SpinnerState } from '../../shared/spinner/spinner-state';
+import { SpinnerService } from '../../shared/components/spinner/spinner.service';
+import { SpinnerState } from '../../shared/components/spinner/spinner-state';
 import { HttpClient } from '@angular/common/http';
 import { environment } from '../../../environments/environment';
 
