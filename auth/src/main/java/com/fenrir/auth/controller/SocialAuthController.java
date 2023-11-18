@@ -13,14 +13,16 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import static com.fenrir.auth.security.SecurityConstants.ACCESS_CONTROL_EXPOSE_HEADERS;
+import static com.fenrir.auth.security.SecurityConstants.BEARER;
+import static com.fenrir.auth.security.SecurityConstants.JSESSIONID;
+import static com.fenrir.auth.security.SecurityConstants.X_TOKEN;
+
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/api/oauth")
 @RequiredArgsConstructor
-class UserController {
-    private static final String X_TOKEN = "X-Token";
-    private static final String ACCESS_CONTROL_EXPOSE_HEADERS = "Access-Control-Expose-Headers";
-    private static final String JSESSIONID = "JSESSIONID";
-    private static final String BEARER = "Bearer ";
+class SocialAuthController {
+
 
     private final AuthenticationFacade authenticationFacade;
     private final JwtUtils jwtUtils;

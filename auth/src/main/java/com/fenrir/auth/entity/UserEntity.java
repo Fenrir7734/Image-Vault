@@ -42,6 +42,7 @@ public class UserEntity {
     private String externalName;
     private String name;
     private String email;
+    private String password;
 
     @Column(nullable = false)
     private Boolean verified;

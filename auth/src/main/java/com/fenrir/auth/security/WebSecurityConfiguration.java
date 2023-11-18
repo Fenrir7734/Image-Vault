@@ -8,6 +8,8 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
 import org.springframework.security.config.http.SessionCreationPolicy;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 
 @Configuration
@@ -25,6 +27,8 @@ class WebSecurityConfiguration {
                         .userInfoEndpoint(userInfo -> userInfo.userService(oAuth2UserService))
                 ).authorizeHttpRequests(auth -> auth
                         .requestMatchers("/", "/**.html", "/**.js").permitAll()
+                        .requestMatchers("/api/standard/**").permitAll()
+                        .requestMatchers("/api/oauth/**").authenticated()
                         .requestMatchers("/api/**").authenticated()
                         .anyRequest().permitAll()
                 ).exceptionHandling(exec -> exec.authenticationEntryPoint(unauthorizedEntryPoint))
@@ -35,5 +39,10 @@ class WebSecurityConfiguration {
                 .logout(AbstractHttpConfigurer::disable)
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.ALWAYS))
                 .build();
+    }
+
+    @Bean
+    public PasswordEncoder passwordEncoder() {
+        return new BCryptPasswordEncoder();
     }
 }

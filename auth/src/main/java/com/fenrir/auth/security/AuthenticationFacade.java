@@ -12,7 +12,13 @@ public class AuthenticationFacade {
 
     public void assertAuthenticated() {
         if (!isAuthenticated()) {
-            throw new ForbiddenException("TEST", "123");
+            throw new ForbiddenException();
+        }
+    }
+
+    public void assertNotAuthenticated() {
+        if (isAuthenticated()) {
+            throw new ForbiddenException();
         }
     }
 
