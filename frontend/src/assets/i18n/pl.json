@@ -1,4 +1,8 @@
 {
+  "DIALOG": {
+    "confirm": "Potwierdź",
+    "cancel": "Anuluj"
+  },
   "AUTH": {
     "google-login": "Zaloguj z Google",
     "facebook-login": "Zaloguj z Facebook"

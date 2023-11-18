@@ -12,7 +12,6 @@
   position: absolute;
   top: 0;
   right: 0;
-  bottom: 0;
   width: 350px;
   padding: 20px;
   z-index: 1;
@@ -33,7 +32,7 @@ div {
 
 .notification {
   height: 75px;
-  border-radius: 5px;
+  border-radius: $border-radius;
   display: flex;
   align-items: stretch;
 
@@ -58,8 +57,8 @@ div {
     }
 
     .header {
-      font-size: 16px;
-      font-weight: 500;
+      font-size: $font-size-4;
+      font-weight: $font-weight-3;
       color: $color-black;
     }
 

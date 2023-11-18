@@ -9,7 +9,7 @@ export class NotificationService {
   private readonly _notifications = new BehaviorSubject<Notification[]>([]);
   readonly notifications$ = this._notifications.asObservable();
 
-  push(notification: Notification): void {
+  push(notification: Notification) {
     this._notifications.next([...this._notifications.value, notification]);
     timer(10000)
       .pipe(take(1))
@@ -18,7 +18,7 @@ export class NotificationService {
       });
   }
 
-  remove(notification: Notification): void {
+  remove(notification: Notification) {
     const notifications = this._notifications.value;
     const idx = notifications.indexOf(notification);
     if (idx !== -1) {

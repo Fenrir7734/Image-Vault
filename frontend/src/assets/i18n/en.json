@@ -1,4 +1,8 @@
 {
+  "DIALOG": {
+    "confirm": "Confirm",
+    "cancel": "Cancel"
+  },
   "AUTH": {
     "google-login": "Login with Google",
     "facebook-login": "Login with Facebook"
