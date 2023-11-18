@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
-import { SpinnerService } from '../../../shared/spinner/spinner.service';
+import { SpinnerService } from '../../../shared/components/spinner/spinner.service';
 import { HttpClient } from '@angular/common/http';
 import { map, Observable } from 'rxjs';
 import { User } from '../model/user';
-import { SpinnerState } from '../../../shared/spinner/spinner-state';
+import { SpinnerState } from '../../../shared/components/spinner/spinner-state';
 import { environment } from '../../../../environments/environment';
 
 @Injectable({

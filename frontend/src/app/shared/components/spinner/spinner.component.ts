@@ -18,14 +18,14 @@ export class SpinnerComponent implements OnInit {
     this.listenStateChange();
   }
 
-  private listenLoadingChange(): void {
+  private listenLoadingChange() {
     this.spinnerService.loading$.subscribe(loading => {
       this.loading = loading;
       this.cdr.detectChanges();
     });
   }
 
-  private listenStateChange(): void {
+  private listenStateChange() {
     this.spinnerService.state$.subscribe(state => {
       this.state = state;
       this.cdr.detectChanges();
