@@ -10,11 +10,13 @@ import { AddClassOnClickDirective } from './directives/add-class-on-click.direct
 import { TranslateModule } from '@ngx-translate/core';
 import { CapitalizedPipe } from './pipe/capitalized.pipe';
 import { NotificationComponent } from './components/notification/notification.component';
+import { ConfirmationComponent } from './components/confirmation/confirmation.component';
 
 @NgModule({
   declarations: [
     SpinnerComponent,
     NotificationComponent,
+    ConfirmationComponent,
     IsAdminDirective,
     IsUserDirective,
     IsEllipsisActiveDirective,
@@ -29,6 +31,7 @@ import { NotificationComponent } from './components/notification/notification.co
     TranslateModule,
     SpinnerComponent,
     NotificationComponent,
+    ConfirmationComponent,
     IsAdminDirective,
     IsUserDirective,
     IsEllipsisActiveDirective,

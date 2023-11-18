@@ -1,0 +1,9 @@
+<div *ngFor="let config of confirmationService.configs$ | async" class="modal">
+  <div *ngIf="config.closable" (click)="onClose(config)" class="close"></div>
+  <div class="header">{{ config.header }}</div>
+  <div class="message">{{ config.message }}</div>
+  <div class="buttons">
+    <button (click)="onAccept(config)">{{ config.accept ? config.accept : 'DIALOG.confirm' | translate }}</button>
+    <button (click)="onReject(config)">{{ config.accept ? config.accept : 'DIALOG.cancel' | translate }}</button>
+  </div>
+</div>

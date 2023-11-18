@@ -41,7 +41,7 @@ $avatar-size: 4rem;
     &--username {
       @include no-overflow();
       max-width: 10rem;
-      font-size: 18px;
+      font-size: $font-size-4;
       font-weight: 500;
       margin-bottom: 0.2rem;
       transition: linear 0.2s;
