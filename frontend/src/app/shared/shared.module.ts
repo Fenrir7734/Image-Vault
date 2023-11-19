@@ -11,6 +11,7 @@ import { TranslateModule } from '@ngx-translate/core';
 import { CapitalizedPipe } from './pipe/capitalized.pipe';
 import { NotificationComponent } from './components/notification/notification.component';
 import { ConfirmationComponent } from './components/confirmation/confirmation.component';
+import { ButtonComponent } from './components/button/button.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { ConfirmationComponent } from './components/confirmation/confirmation.co
     IsEllipsisActiveDirective,
     AddClassOnClickDirective,
     CapitalizedPipe,
+    ButtonComponent,
   ],
   imports: [TranslateModule, MaterialModule, CommonModule],
   exports: [
@@ -37,6 +39,7 @@ import { ConfirmationComponent } from './components/confirmation/confirmation.co
     IsEllipsisActiveDirective,
     AddClassOnClickDirective,
     CapitalizedPipe,
+    ButtonComponent,
   ],
 })
 export class SharedModule {}

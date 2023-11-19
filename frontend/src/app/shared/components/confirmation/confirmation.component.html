@@ -3,7 +3,11 @@
   <div class="header">{{ config.header }}</div>
   <div class="message">{{ config.message }}</div>
   <div class="buttons">
-    <button (click)="onAccept(config)">{{ config.accept ? config.accept : 'DIALOG.confirm' | translate }}</button>
-    <button (click)="onReject(config)">{{ config.accept ? config.accept : 'DIALOG.cancel' | translate }}</button>
+    <app-button (click)="onReject(config)" mode="hollow">
+      {{ config.accept ? config.accept : 'DIALOG.cancel' | translate }}
+    </app-button>
+    <app-button (click)="onAccept(config)">
+      {{ config.accept ? config.accept : 'DIALOG.confirm' | translate }}
+    </app-button>
   </div>
 </div>
