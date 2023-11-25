@@ -3,7 +3,5 @@
         class="btn"
         [ngClass]="'btn--' + mode"
         (click)="onClick()">
-  <span>
-    <ng-content></ng-content>
-  </span>
+  <span>{{ text }}</span>
 </button>
