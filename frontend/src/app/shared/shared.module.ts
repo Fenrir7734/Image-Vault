@@ -10,6 +10,7 @@ import { AddClassOnClickDirective } from './directives/add-class-on-click.direct
 import { TranslateModule } from '@ngx-translate/core';
 import { CapitalizedPipe } from './pipe/capitalized.pipe';
 import { PrimeNgModule } from './prime-ng.module';
+import { ProgressSpinnerModule } from 'primeng/progressspinner';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,7 @@ import { PrimeNgModule } from './prime-ng.module';
     AddClassOnClickDirective,
     CapitalizedPipe,
   ],
-  imports: [TranslateModule, MaterialModule, PrimeNgModule, CommonModule],
+  imports: [TranslateModule, MaterialModule, PrimeNgModule, CommonModule, ProgressSpinnerModule],
   exports: [
     CommonModule,
     MaterialModule,
