@@ -1,0 +1,7 @@
+<p-button class="button"
+          [ngClass]="[size, look]"
+          [label]="label"
+          [disabled]="disabled"
+          (onClick)="click()">
+  <fa-icon *ngIf="icon" class="icon" [icon]="icon"/>
+</p-button>

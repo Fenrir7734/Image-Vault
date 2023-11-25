@@ -4,6 +4,10 @@
     "cancel": "Cancel"
   },
   "AUTH": {
+    "username": "Username",
+    "password": "Password",
+    "sign-in": "Sign in",
+    "sign-up": "Sign up",
     "google-login": "Login with Google",
     "facebook-login": "Login with Facebook"
   },

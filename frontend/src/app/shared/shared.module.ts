@@ -10,7 +10,9 @@ import { AddClassOnClickDirective } from './directives/add-class-on-click.direct
 import { TranslateModule } from '@ngx-translate/core';
 import { CapitalizedPipe } from './pipe/capitalized.pipe';
 import { PrimeNgModule } from './prime-ng.module';
-import { ProgressSpinnerModule } from 'primeng/progressspinner';
+import { InputComponent } from './components/input/input.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { ButtonComponent } from './components/button/button.component';
 
 @NgModule({
   declarations: [
@@ -20,12 +22,15 @@ import { ProgressSpinnerModule } from 'primeng/progressspinner';
     IsEllipsisActiveDirective,
     AddClassOnClickDirective,
     CapitalizedPipe,
+    InputComponent,
+    ButtonComponent,
   ],
-  imports: [TranslateModule, MaterialModule, PrimeNgModule, CommonModule, ProgressSpinnerModule],
+  imports: [TranslateModule, MaterialModule, PrimeNgModule, CommonModule, FontAwesomeModule],
   exports: [
     CommonModule,
     MaterialModule,
     PrimeNgModule,
+    FontAwesomeModule,
     HttpClientModule,
     TranslateModule,
     SpinnerComponent,
@@ -34,6 +39,8 @@ import { ProgressSpinnerModule } from 'primeng/progressspinner';
     IsEllipsisActiveDirective,
     AddClassOnClickDirective,
     CapitalizedPipe,
+    InputComponent,
+    ButtonComponent,
   ],
 })
 export class SharedModule {}

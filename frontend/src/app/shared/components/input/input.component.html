@@ -1,0 +1,20 @@
+<span class="p-float-label container">
+  <input pInputText
+         id="app-input"
+         class="{{ error ? 'ng-invalid ng-dirty' : '' }}"
+         [ngClass]="size"
+         [type]="type"
+         [disabled]="disabled">
+  <label htmlFor="app-input">{{ label }}</label>
+
+  <fa-icon *ngIf="shouldShowInfoMsg()"
+           [pTooltip]="infoMsg"
+           [icon]="infoIcon"
+           class="icon info-icon"
+           size="lg"/>
+  <fa-icon *ngIf="shouldShowErrorMsg()"
+           [pTooltip]="errorMsg"
+           [icon]="errorIcon"
+           class="icon info-icon"
+           size="lg"/>
+</span>

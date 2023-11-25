@@ -20,35 +20,27 @@
     max-width: 75%;
   }
 
-  .sso-container {
-    display: flex;
-    flex-direction: column;
-    gap: $gap-3;
-  }
+  .login-container {
+    margin: 0 auto;
+    min-width: 18rem;
 
-  .icon-button {
-    width: 15em;
+    .std-container {
+      display: flex;
+      flex-direction: column;
+      gap: $gap-3;
+    }
 
-    .content {
+    .sso-container {
       display: flex;
       flex-direction: row;
-      align-items: center;
-      flex-wrap: nowrap;
-      gap: .5em;
+      align-items: stretch;
+      padding: 0;
+      margin: $gap-3 0 0;
+      gap: $gap-3;
 
-      .icon {
-        width: 1.5em;
+      app-button {
+        flex: 1;
       }
     }
-  }
-
-  .google {
-    color: $color-black;
-    background-color: white;
-  }
-
-  .facebook {
-    color: $color-white;
-    background-color: #3074ec;
   }
 }

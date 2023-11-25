@@ -1,0 +1,35 @@
+@import "../../../../scss/utils/variables";
+
+.container {
+  margin-top: $gap-4;
+}
+
+.icon {
+  position: relative;
+  right: 12%;
+  cursor: pointer;
+
+  &-icon {
+    color: $color-light-gray;
+  }
+
+  &-error {
+    color: $color-red;
+  }
+}
+
+.small {
+  width: 10rem;
+}
+
+.medium {
+  width: 20rem;
+}
+
+.large {
+  width: 30rem;
+}
+
+.fill {
+  width: 100%;
+}

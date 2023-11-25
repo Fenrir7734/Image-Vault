@@ -7,10 +7,11 @@ import { AuthInterceptor } from './core/interceptors/auth.interceptor';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { IvTranslateModule } from './translate.module';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [CoreModule, RouterOutlet, BrowserModule, BrowserAnimationsModule, IvTranslateModule],
+  imports: [CoreModule, RouterOutlet, BrowserModule, BrowserAnimationsModule, IvTranslateModule, FontAwesomeModule],
   providers: [
     {
       provide: HTTP_INTERCEPTORS,

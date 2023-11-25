@@ -4,19 +4,17 @@
   </div>
   <img class="logo" src="../../../../assets/logo/iv-logo-large-white.png" alt="logo">
 
-  <div class="sso-container">
-    <button mat-flat-button class="icon-button google" (click)="auth.redirectToGoogleLogin()">
-      <div class="content">
-        <img class="icon" src="../../../../assets/img/google-logo.png" alt="google">
-        <span>{{ 'AUTH.google-login' | translate }}</span>
-      </div>
-    </button>
-    <button mat-flat-button class="icon-button facebook" (click)="auth.redirectToFacebookLogin()">
-      <div class="content">
-        <img class="icon" src="../../../../assets/img/facebook-icon-white-png.png" alt="google">
-        <span>{{ 'AUTH.facebook-login' | translate }}</span>
-      </div>
-    </button>
+  <div class="login-container">
+    <div class="std-container">
+      <app-input label="{{ 'AUTH.username' | translate }}" size="fill"/>
+      <app-input label="{{ 'AUTH.password' | translate }}" size="fill"/>
+      <app-button label="{{ 'AUTH.sign-in' | translate }}" size="fill" look="inverted"/>
+      <app-button label="{{ 'AUTH.sign-up' | translate }}" size="fill" look="inverted"/>
+    </div>
+    <div class="sso-container">
+      <app-button [icon]="googleIcon" size="fill" look="inverted" (clicked)="auth.redirectToGoogleLogin()"/>
+      <app-button [icon]="facebookIcon" size="fill" look="inverted" (clicked)="auth.redirectToFacebookLogin()"/>
+    </div>
   </div>
 
 </div>
