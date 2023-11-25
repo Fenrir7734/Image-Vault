@@ -1,9 +1,0 @@
-<div *ngFor="let notification of notificationService.notifications$ | async" @verticalCollapse @triggerChildAnimation>
-  <div class="notification" @slideIn @slideOut [ngClass]="getColor(notification.type)" (click)="notificationService.remove(notification)">
-    <div class="border"></div>
-    <div class="content">
-      <span class="header">{{notification.header}}</span>
-      <span class="message">{{notification.message}}</span>
-    </div>
-  </div>
-</div>

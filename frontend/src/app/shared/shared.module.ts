@@ -9,37 +9,30 @@ import { CommonModule } from '@angular/common';
 import { AddClassOnClickDirective } from './directives/add-class-on-click.directive';
 import { TranslateModule } from '@ngx-translate/core';
 import { CapitalizedPipe } from './pipe/capitalized.pipe';
-import { NotificationComponent } from './components/notification/notification.component';
-import { ConfirmationComponent } from './components/confirmation/confirmation.component';
-import { ButtonComponent } from './components/button/button.component';
+import { PrimeNgModule } from './prime-ng.module';
 
 @NgModule({
   declarations: [
     SpinnerComponent,
-    NotificationComponent,
-    ConfirmationComponent,
     IsAdminDirective,
     IsUserDirective,
     IsEllipsisActiveDirective,
     AddClassOnClickDirective,
     CapitalizedPipe,
-    ButtonComponent,
   ],
-  imports: [TranslateModule, MaterialModule, CommonModule],
+  imports: [TranslateModule, MaterialModule, PrimeNgModule, CommonModule],
   exports: [
     CommonModule,
     MaterialModule,
+    PrimeNgModule,
     HttpClientModule,
     TranslateModule,
     SpinnerComponent,
-    NotificationComponent,
-    ConfirmationComponent,
     IsAdminDirective,
     IsUserDirective,
     IsEllipsisActiveDirective,
     AddClassOnClickDirective,
     CapitalizedPipe,
-    ButtonComponent,
   ],
 })
 export class SharedModule {}
