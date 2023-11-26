@@ -13,6 +13,7 @@ import { PrimeNgModule } from './prime-ng.module';
 import { InputComponent } from './components/input/input.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ButtonComponent } from './components/button/button.component';
+import { ValidationErrorMessagePipe } from './pipe/validation-error-message.pipe';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { ButtonComponent } from './components/button/button.component';
     IsEllipsisActiveDirective,
     AddClassOnClickDirective,
     CapitalizedPipe,
+    ValidationErrorMessagePipe,
     InputComponent,
     ButtonComponent,
   ],
@@ -39,6 +41,7 @@ import { ButtonComponent } from './components/button/button.component';
     IsEllipsisActiveDirective,
     AddClassOnClickDirective,
     CapitalizedPipe,
+    ValidationErrorMessagePipe,
     InputComponent,
     ButtonComponent,
   ],

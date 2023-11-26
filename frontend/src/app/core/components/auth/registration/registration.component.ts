@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { AuthService } from '../../../services/auth.service';
-import { FormBuilder, Validators } from '@angular/forms';
+import { FormBuilder, ValidationErrors, Validators } from '@angular/forms';
 import { MessageService } from 'primeng/api';
 import { Register } from '../../../models/register';
 import { TranslateService } from '@ngx-translate/core';
@@ -14,8 +14,8 @@ export class RegistrationComponent {
   @Output() goBack = new EventEmitter<void>();
 
   readonly form = this.fb.group({
-    username: ['', [Validators.required, Validators.min(2), Validators.max(100)]],
-    email: ['', [Validators.required, Validators.email, Validators.max(256)]],
+    username: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(100)]],
+    email: ['', [Validators.required, Validators.email, Validators.minLength(2), Validators.maxLength(256)]],
     password: ['', [Validators.required]],
     passwordRepeat: ['', [Validators.required]],
   });
@@ -66,5 +66,9 @@ export class RegistrationComponent {
   isControlValid(name: string): boolean {
     const control = this.form.get(name);
     return !!control && control.touched && !control.valid;
+  }
+
+  getErrors(name: string): ValidationErrors | undefined | null {
+    return this.form.get(name)?.errors;
   }
 }

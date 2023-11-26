@@ -17,11 +17,7 @@
     "google-login": "Zaloguj z Google",
     "facebook-login": "Zaloguj z Facebook",
     "registered": "Zarejestrowano",
-    "registration-successful": "Pomyślnie zarejestrowano",
-    "validation": {
-      "email-required": "Ares e-mail jest wymagany",
-      "password-required": "Hasło jest wymagane"
-    }
+    "registration-successful": "Pomyślnie zarejestrowano"
   },
   "SIDENAV": {
     "home": "Strona Główna",
@@ -54,5 +50,11 @@
   },
   "ERROR": {
     "AUTH-1009": "Błędne dane uwierzytelniające"
+  },
+  "VALIDATION": {
+    "required": "Wartość jest wymagana",
+    "minlength": "Minimalna długość to {{requiredLength}}",
+    "maxlength": "Maksymalna długość to {{requiredLength}}",
+    "email": "Niepoprawny adres e-mail"
   }
 }

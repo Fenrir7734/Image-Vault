@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Output } from '@angular/core';
-import { FormBuilder, Validators } from '@angular/forms';
+import { FormBuilder, ValidationErrors, Validators } from '@angular/forms';
 import { AuthService } from '../../../services/auth.service';
 import { Router } from '@angular/router';
 import { Login } from '../../../models/login';
@@ -52,5 +52,9 @@ export class StandardLoginComponent {
   isPasswordInvalid(): boolean {
     const control = this.form.get('password');
     return !!control && control.touched && !control.valid;
+  }
+
+  getErrors(name: string): ValidationErrors | undefined | null {
+    return this.form.get(name)?.errors;
   }
 }

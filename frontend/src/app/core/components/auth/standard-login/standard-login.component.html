@@ -4,14 +4,14 @@
              labelType="placeholder"
              type="email"
              size="fill"
-             errorMsg="{{ 'AUTH.validation.email-required' | translate }}"
+             errorMsg="{{ getErrors('email') | validationErrorMessage }}"
              [error]="isEmailInvalid()"/>
   <app-input formControlName="password"
              label="{{ 'AUTH.password' | translate }}"
              labelType="placeholder"
              type="password"
              size="fill"
-             errorMsg="{{ 'AUTH.validation.password-required' | translate }}"
+             errorMsg="{{ getErrors('password') | validationErrorMessage }}"
              [error]="isPasswordInvalid()"/>
   <app-button label="{{ 'AUTH.sign-in' | translate }}"
               size="fill"
