@@ -13,6 +13,8 @@ import { SidenavComponent } from './components/sidenav/sidenav.component';
 import { SidenavUserComponent } from './components/sidenav/sidenav-user/sidenav-user.component';
 import { SidenavNavigationComponent } from './components/sidenav/sidenav-navigation/sidenav-navigation.component';
 import { SidenavControlComponent } from './components/sidenav/sidenav-control/sidenav-control.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { MessageService } from 'primeng/api';
 
 @NgModule({
   declarations: [
@@ -73,6 +75,8 @@ import { SidenavControlComponent } from './components/sidenav/sidenav-control/si
         ],
       },
     ]),
+    ReactiveFormsModule,
   ],
+  providers: [MessageService],
 })
 export class CoreModule {}

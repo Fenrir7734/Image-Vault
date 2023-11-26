@@ -4,12 +4,16 @@
     "cancel": "Cancel"
   },
   "AUTH": {
-    "username": "Username",
+    "email": "E-mail",
     "password": "Password",
     "sign-in": "Sign in",
     "sign-up": "Sign up",
     "google-login": "Login with Google",
-    "facebook-login": "Login with Facebook"
+    "facebook-login": "Login with Facebook",
+    "validation": {
+      "email-required": "E-mail is required",
+      "password-required": "Password is required"
+    }
   },
   "SIDENAV": {
     "home": "Home Page",

@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { AuthService } from '../../services/auth.service';
 import { faGoogle } from '@fortawesome/free-brands-svg-icons';
 import { faFacebook } from '@fortawesome/free-brands-svg-icons';
+import { FormBuilder, Validators } from '@angular/forms';
+import { MessageService } from 'primeng/api';
 
 @Component({
   selector: 'app-auth',
@@ -12,5 +14,38 @@ export class AuthComponent {
   googleIcon = faGoogle;
   facebookIcon = faFacebook;
 
-  constructor(public auth: AuthService) {}
+  readonly form = this.fb.group({
+    email: ['', [Validators.required]],
+    password: ['', [Validators.required]],
+  });
+
+  constructor(public auth: AuthService, private fb: FormBuilder, public messageService: MessageService) {}
+
+  login() {
+    const emailControl = this.form.get('email');
+    const passwordControl = this.form.get('password');
+
+    emailControl?.markAsTouched();
+    passwordControl?.markAllAsTouched();
+
+    if (this.isEmailInvalid() || this.isPasswordInvalid()) {
+      return;
+    }
+
+    this.auth.login(emailControl?.value ?? '', passwordControl?.value ?? '').subscribe({
+      next: () => {},
+      error: () => {},
+      complete: () => {},
+    });
+  }
+
+  isEmailInvalid(): boolean {
+    const control = this.form.get('email');
+    return !!control && control.touched && !control.valid;
+  }
+
+  isPasswordInvalid(): boolean {
+    const control = this.form.get('password');
+    return !!control && control.touched && !control.valid;
+  }
 }

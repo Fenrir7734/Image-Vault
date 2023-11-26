@@ -1,17 +1,17 @@
-import { Injectable } from '@angular/core';
-import {
-  HttpRequest,
-  HttpHandler,
-  HttpInterceptor,
-  HttpErrorResponse,
-  HttpUserEvent,
-  HttpProgressEvent,
-  HttpResponse,
-  HttpHeaderResponse,
-  HttpSentEvent,
-} from '@angular/common/http';
-import { catchError, EMPTY, Observable, throwError } from 'rxjs';
 import { AuthService } from '../services/auth.service';
+import { EMPTY, Observable, catchError, throwError } from 'rxjs';
+import {
+  HttpErrorResponse,
+  HttpHandler,
+  HttpHeaderResponse,
+  HttpInterceptor,
+  HttpProgressEvent,
+  HttpRequest,
+  HttpResponse,
+  HttpSentEvent,
+  HttpUserEvent,
+} from '@angular/common/http';
+import { Injectable } from '@angular/core';
 import { JwtService } from '../services/jwt.service';
 
 @Injectable()
@@ -29,14 +29,8 @@ export class AuthInterceptor implements HttpInterceptor {
             this.authService.logout();
             return EMPTY;
           }
-          if (err.status === 404 && err.url?.indexOf('api') === -1) {
-            return EMPTY;
-          }
-        } else {
-          return throwError(err);
         }
-
-        return EMPTY;
+        return throwError(err);
       })
     );
   }

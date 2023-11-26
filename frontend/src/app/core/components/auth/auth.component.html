@@ -5,11 +5,21 @@
   <img class="logo" src="../../../../assets/logo/iv-logo-large-white.png" alt="logo">
 
   <div class="login-container">
-    <div class="std-container">
-      <app-input label="{{ 'AUTH.username' | translate }}" size="fill"/>
-      <app-input label="{{ 'AUTH.password' | translate }}" size="fill"/>
-      <app-button label="{{ 'AUTH.sign-in' | translate }}" size="fill" look="inverted"/>
-      <app-button label="{{ 'AUTH.sign-up' | translate }}" size="fill" look="inverted"/>
+    <div class="std-container" [formGroup]="form">
+      <app-input formControlName="email"
+                 label="{{ 'AUTH.email' | translate }}"
+                 labelType="placeholder"
+                 size="fill"
+                 errorMsg="{{ 'AUTH.validation.email-required' | translate }}"
+                 [error]="isEmailInvalid()"/>
+      <app-input formControlName="password"
+                 label="{{ 'AUTH.password' | translate }}"
+                 labelType="placeholder"
+                 type="password"
+                 size="fill"
+                 errorMsg="{{ 'AUTH.validation.password-required' | translate }}"
+                 [error]="isPasswordInvalid()"/>
+      <app-button label="{{ 'AUTH.sign-in' | translate }}" size="fill" look="inverted" (clicked)="login()"/>
     </div>
     <div class="sso-container">
       <app-button [icon]="googleIcon" size="fill" look="inverted" (clicked)="auth.redirectToGoogleLogin()"/>

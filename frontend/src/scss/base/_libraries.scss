@@ -1,0 +1,10 @@
+@import "utils/variables";
+
+// Needs to be here to work
+.overlay {
+  background-color: rgb($color-black, 0.7);
+}
+
+.error-tooltip.p-tooltip .p-tooltip-text {
+  background-color: $color-red !important;
+}
