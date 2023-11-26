@@ -1,4 +1,7 @@
 {
+  "COMMONS": {
+    "error": "Error"
+  },
   "DIALOG": {
     "confirm": "Confirm",
     "cancel": "Cancel"
@@ -43,5 +46,8 @@
     "ADMIN": "Admin",
     "USER": "User",
     "VIEWER": "Viewer"
+  },
+  "ERROR": {
+    "AUTH-1009": "Wrong credentials"
   }
 }

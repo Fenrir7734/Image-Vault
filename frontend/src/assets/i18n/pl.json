@@ -1,4 +1,7 @@
 {
+  "COMMONS": {
+    "error": "Błąd"
+  },
   "DIALOG": {
     "confirm": "Potwierdź",
     "cancel": "Anuluj"
@@ -43,5 +46,8 @@
     "ADMIN": "Administrator",
     "USER": "Użytkownik",
     "VIEWER": "Przeglądacz"
+  },
+  "ERROR": {
+    "AUTH-1009": "Błędne dane uwierzytelniające"
   }
 }

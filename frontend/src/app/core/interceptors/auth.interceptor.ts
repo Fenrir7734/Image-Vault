@@ -27,7 +27,6 @@ export class AuthInterceptor implements HttpInterceptor {
         if (err instanceof HttpErrorResponse) {
           if (err.status === 401) {
             this.authService.logout();
-            return EMPTY;
           }
         }
         return throwError(err);

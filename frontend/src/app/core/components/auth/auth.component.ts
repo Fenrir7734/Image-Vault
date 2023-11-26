@@ -3,7 +3,7 @@ import { AuthService } from '../../services/auth.service';
 import { faGoogle } from '@fortawesome/free-brands-svg-icons';
 import { faFacebook } from '@fortawesome/free-brands-svg-icons';
 import { FormBuilder, Validators } from '@angular/forms';
-import { MessageService } from 'primeng/api';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-auth',
@@ -11,16 +11,16 @@ import { MessageService } from 'primeng/api';
   styleUrls: ['./auth.component.scss'],
 })
 export class AuthComponent {
-  loading = false;
   googleIcon = faGoogle;
   facebookIcon = faFacebook;
+  loading = false;
 
   readonly form = this.fb.group({
     email: ['', [Validators.required]],
     password: ['', [Validators.required]],
   });
 
-  constructor(public auth: AuthService, private fb: FormBuilder, public messageService: MessageService) {}
+  constructor(public auth: AuthService, private fb: FormBuilder, private router: Router) {}
 
   login() {
     const emailControl = this.form.get('email');
@@ -35,6 +35,12 @@ export class AuthComponent {
 
     this.loading = true;
     this.auth.login(emailControl?.value ?? '', passwordControl?.value ?? '').subscribe({
+      next: () => {
+        this.router.navigate(['home']);
+      },
+      error: () => {
+        this.loading = false;
+      },
       complete: () => {
         this.loading = false;
       },
