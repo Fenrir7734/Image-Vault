@@ -1,11 +1,10 @@
 <div class="container">
-  <div class="translate">
+  <header class="translate">
     <app-translate></app-translate>
-  </div>
+  </header>
   <img class="logo" src="../../../../assets/logo/iv-logo-large-white.png" alt="Logo">
-
-  <div class="login-container">
-    <div class="std-container" [formGroup]="form">
+  <section>
+    <form class="login-form" [formGroup]="form">
       <app-input formControlName="email"
                  label="{{ 'AUTH.email' | translate }}"
                  labelType="placeholder"
@@ -24,10 +23,10 @@
                   look="inverted"
                   [loading]="loading"
                   (clicked)="login()"/>
-    </div>
+    </form>
     <div class="sso-container">
       <app-button [icon]="googleIcon" size="fill" look="inverted" (clicked)="auth.redirectToGoogleLogin()"/>
       <app-button [icon]="facebookIcon" size="fill" look="inverted" (clicked)="auth.redirectToFacebookLogin()"/>
     </div>
-  </div>
+  </section>
 </div>
