@@ -7,12 +7,17 @@
     "cancel": "Anuluj"
   },
   "AUTH": {
+    "username": "Nazwa użytkownika",
     "email": "E-mail",
     "password": "Hasło",
+    "repeat-password": "Powtórz hasło",
+    "go-back": "Wróć",
     "sign-in": "Zaloguj się",
     "sign-up": "Zarejestruj się",
     "google-login": "Zaloguj z Google",
     "facebook-login": "Zaloguj z Facebook",
+    "registered": "Zarejestrowano",
+    "registration-successful": "Pomyślnie zarejestrowano",
     "validation": {
       "email-required": "Ares e-mail jest wymagany",
       "password-required": "Hasło jest wymagane"

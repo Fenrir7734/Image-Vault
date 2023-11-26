@@ -17,5 +17,9 @@
               size="fill"
               look="inverted"
               [loading]="loading"
-              (clicked)="login()"/>
+              (clicked)="onLogin()"/>
+  <app-button label="{{ 'AUTH.sign-up' | translate }}"
+              size="fill"
+              look="inverted"
+              (clicked)="onRegister()"/>
 </form>

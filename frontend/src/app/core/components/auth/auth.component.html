@@ -4,7 +4,8 @@
   </header>
   <img class="logo" src="../../../../assets/logo/iv-logo-large-white.png" alt="Logo">
   <section class="form">
-    <app-standard-login></app-standard-login>
-    <app-social-login></app-social-login>
+    <app-standard-login *ngIf="!register" (register)="onRegister()"></app-standard-login>
+    <app-social-login *ngIf="!register"></app-social-login>
+    <app-registration *ngIf="register" (goBack)="onGoBack()"></app-registration>
   </section>
 </div>

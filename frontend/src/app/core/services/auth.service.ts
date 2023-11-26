@@ -7,6 +7,8 @@ import { Roles } from '../constants/roles';
 import { environment } from '../../../environments/environment';
 import { JwtService } from './jwt.service';
 import { Router } from '@angular/router';
+import { Login } from '../models/login';
+import { Register } from '../models/register';
 
 @Injectable({
   providedIn: 'root',
@@ -62,17 +64,14 @@ export class AuthService {
     return this.httpClient.get<Response>(`${environment.baseUrl}/auth/api/oauth/exchange`, { observe: 'response' });
   }
 
-  login(email: string, password: string): Observable<void> {
+  login(login: Login): Observable<void> {
     return this.httpClient
-      .post<Response>(
-        `${environment.baseUrl}/auth/api/standard/exchange`,
-        {
-          email,
-          password,
-        },
-        { observe: 'response' }
-      )
+      .post<Response>(`${environment.baseUrl}/auth/api/standard/exchange`, login, { observe: 'response' })
       .pipe(map(res => this.processToken(res)));
+  }
+
+  register(register: Register) {
+    return this.httpClient.post<void>(`${environment.baseUrl}/auth/api/standard/register`, register);
   }
 
   private processToken(res: HttpResponse<Response>) {

@@ -17,6 +17,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { MessageService } from 'primeng/api';
 import { SocialLoginComponent } from './components/auth/social-login/social-login.component';
 import { StandardLoginComponent } from './components/auth/standard-login/standard-login.component';
+import { RegistrationComponent } from './components/auth/registration/registration.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { StandardLoginComponent } from './components/auth/standard-login/standar
     SidenavControlComponent,
     SocialLoginComponent,
     StandardLoginComponent,
+    RegistrationComponent,
   ],
   imports: [
     SharedModule,

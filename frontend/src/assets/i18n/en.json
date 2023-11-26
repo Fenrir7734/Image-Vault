@@ -7,12 +7,17 @@
     "cancel": "Cancel"
   },
   "AUTH": {
+    "username": "Username",
     "email": "E-mail",
     "password": "Password",
+    "repeat-password": "Repeat password",
+    "go-back": "Go back",
     "sign-in": "Sign in",
     "sign-up": "Sign up",
     "google-login": "Login with Google",
     "facebook-login": "Login with Facebook",
+    "registered": "Registered",
+    "registration-successful": "Successfully registered",
     "validation": {
       "email-required": "E-mail is required",
       "password-required": "Password is required"

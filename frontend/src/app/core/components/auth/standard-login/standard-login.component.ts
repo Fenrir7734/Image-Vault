@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { AuthService } from '../../../services/auth.service';
 import { Router } from '@angular/router';
+import { Login } from '../../../models/login';
 
 @Component({
   selector: 'app-standard-login',
@@ -9,28 +10,24 @@ import { Router } from '@angular/router';
   styleUrls: ['./standard-login.component.scss'],
 })
 export class StandardLoginComponent {
-  loading = false;
+  @Output() register = new EventEmitter<void>();
 
   readonly form = this.fb.group({
     email: ['', [Validators.required]],
     password: ['', [Validators.required]],
   });
+  loading = false;
 
-  constructor(public auth: AuthService, private fb: FormBuilder, private router: Router) {}
+  constructor(private auth: AuthService, private fb: FormBuilder, private router: Router) {}
 
-  login() {
-    const emailControl = this.form.get('email');
-    const passwordControl = this.form.get('password');
-
-    emailControl?.markAsTouched();
-    passwordControl?.markAllAsTouched();
-
+  onLogin() {
+    this.form.markAllAsTouched();
     if (this.isEmailInvalid() || this.isPasswordInvalid()) {
       return;
     }
 
     this.loading = true;
-    this.auth.login(emailControl?.value ?? '', passwordControl?.value ?? '').subscribe({
+    this.auth.login(this.form.value as Login).subscribe({
       next: () => {
         this.router.navigate(['home']);
       },
@@ -41,6 +38,10 @@ export class StandardLoginComponent {
         this.loading = false;
       },
     });
+  }
+
+  onRegister() {
+    this.register.emit();
   }
 
   isEmailInvalid(): boolean {
