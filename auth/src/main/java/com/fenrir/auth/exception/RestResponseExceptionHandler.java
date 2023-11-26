@@ -6,6 +6,7 @@ import com.fenrir.auth.exception.exceptions.OAuth2AuthenticationProcessingExcept
 import com.fenrir.auth.exception.exceptions.PasswordMismatchException;
 import com.fenrir.auth.exception.exceptions.StandardException;
 import com.fenrir.auth.exception.exceptions.UnverifiedException;
+import com.fenrir.auth.exception.exceptions.WrongCredentialsException;
 import com.fenrir.auth.exception.message.ConstraintViolationErrorMessage;
 import com.fenrir.auth.exception.message.ConstraintViolationInfo;
 import com.fenrir.auth.exception.message.ErrorCode;
@@ -27,6 +28,17 @@ import java.util.List;
 public class RestResponseExceptionHandler {
     private static final String CONSTRAINT_VIOLATION_MESSAGE = "Constraint Violation";
     private static final String INTERNAL_SERVER_ERROR_MESSAGE = "Internal server error";
+
+    @ExceptionHandler({ WrongCredentialsException.class })
+    public ResponseEntity<ErrorMessage> handleUnauthorizedException(StandardException ex, WebRequest request) {
+        ErrorMessage message = new ErrorMessage(
+                HttpStatus.UNAUTHORIZED.value(),
+                LocalDateTime.now(),
+                ex.getMessage(),
+                ex.getErrorCode()
+        );
+        return new ResponseEntity<>(message, HttpStatus.UNAUTHORIZED);
+    }
 
     @ExceptionHandler({ ForbiddenException.class, AccessDeniedException.class })
     public ResponseEntity<ErrorMessage> handleForbiddenException(Exception ex, WebRequest request) {

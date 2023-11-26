@@ -1,5 +1,6 @@
 @import "base/reset";
 @import "base/typography";
+@import "base/libraries";
 @import "components/button";
 @import "components/card";
 @import "utils/variables";
@@ -7,9 +8,4 @@
 html,
 body {
   background-color: $color-white;
-}
-
-// Needs to be here to work
-.overlay {
-  background-color: rgb($color-black, 0.7);
 }

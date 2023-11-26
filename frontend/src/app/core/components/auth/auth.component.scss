@@ -20,35 +20,29 @@
     max-width: 75%;
   }
 
-  .sso-container {
+  .login-form {
+    margin: 0 auto;
+    min-width: 18rem;
     display: flex;
     flex-direction: column;
     gap: $gap-3;
   }
 
-  .icon-button {
-    width: 15em;
+  .sso-container {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    padding: 0;
+    margin: $gap-3 0 0;
+    gap: $gap-3;
 
-    .content {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      flex-wrap: nowrap;
-      gap: .5em;
-
-      .icon {
-        width: 1.5em;
-      }
+    app-button {
+      flex: 1;
     }
   }
 
-  .google {
-    color: $color-black;
-    background-color: white;
-  }
-
-  .facebook {
-    color: $color-white;
-    background-color: #3074ec;
+  .login-container {
+    margin: 0 auto;
+    min-width: 18rem;
   }
 }

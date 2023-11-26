@@ -1,0 +1,59 @@
+@import "../../../../scss/utils/variables";
+
+@mixin button-size($size) {
+  ::ng-deep .p-button {
+    width: $size;
+  }
+}
+
+@mixin button-color($bg, $text, $highlight) {
+  ::ng-deep .p-button {
+    background-color: $bg;
+    color: $text;
+    border: 1px solid $highlight;
+  }
+}
+
+.button {
+  display: inline-block;
+}
+
+.icon {
+  margin: 0 auto;
+}
+
+:host ::ng-deep .p-button {
+  height: 2.5rem;
+  font-size: $font-size-2;
+  overflow: hidden;
+
+  & span {
+    font-weight: $font-weight-3 !important;
+  }
+}
+
+:host ::ng-deep .loading .p-button:disabled {
+  opacity: 1;
+}
+
+:host ::ng-deep p-progressSpinner {
+  margin: 0 auto;
+}
+
+:host ::ng-deep .spinner-full .p-progress-spinner-circle {
+  stroke: $color-white !important;
+}
+
+:host ::ng-deep .spinner-hollow .p-progress-spinner-circle,
+:host ::ng-deep .spinner-inverted .p-progress-spinner-circle {
+  stroke: $color-primary !important;
+}
+
+.small    { @include button-size(2rem) }
+.medium   { @include button-size(10rem) }
+.large    { @include button-size(15rem) }
+.fill     { @include button-size(100%); display: block }
+
+.full     { @include button-color($color-primary, $color-white, $color-primary) }
+.hollow   { @include button-color(transparent, $color-primary, $color-primary) }
+.inverted { @include button-color($color-white, $color-primary, $color-white) }

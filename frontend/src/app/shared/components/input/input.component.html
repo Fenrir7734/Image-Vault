@@ -1,0 +1,24 @@
+<span class="p-input-icon-right" [ngClass]="[size, labelType === 'float' ? 'p-float-label' : '']">
+  <input pInputText
+         id="app-input"
+         [class]="error ? 'ng-invalid ng-dirty' : ''"
+         [ngClass]="size"
+         [value]="value"
+         [type]="type"
+         [disabled]="disabled"
+         [placeholder]="labelType === 'placeholder' ? label : ''"
+         (keyup)="changes($event)">
+  <label *ngIf="labelType === 'float'" [htmlFor]="'app-input'">{{ label }}</label>
+
+  <fa-icon *ngIf="shouldShowInfoMsg()"
+           [icon]="infoIcon"
+           [pTooltip]="infoMsg"
+           class="icon icon-info"
+           size="lg"/>
+  <fa-icon *ngIf="shouldShowErrorMsg()"
+           [icon]="errorIcon"
+           [pTooltip]="errorMsg"
+           tooltipStyleClass="error-tooltip"
+           class="icon icon-error"
+           size="lg"/>
+</span>

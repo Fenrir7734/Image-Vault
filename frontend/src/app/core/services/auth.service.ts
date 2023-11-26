@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { UserPermissions } from '../models/user-permissions.model';
 import { HttpClient, HttpResponse } from '@angular/common/http';
 import { isEmpty } from 'lodash';
-import { Observable, Subscription, of } from 'rxjs';
+import { Observable, Subscription, of, map } from 'rxjs';
 import { Roles } from '../constants/roles';
 import { environment } from '../../../environments/environment';
 import { JwtService } from './jwt.service';
@@ -55,15 +55,30 @@ export class AuthService {
     this._isLoadingPermissions = true;
     this._permissions = this.jwtService.getUserPermissions();
     if (this._permissions) return of(this._permissions).subscribe();
-    return this.exchange().subscribe((res: HttpResponse<Response>) => {
-      this.jwtService.setAuthToken(res.headers.get(AuthService.X_TOKEN));
-      this._permissions = this.jwtService.getUserPermissions();
-      this._isLoadingPermissions = false;
-    });
+    return this.exchange().subscribe((res: HttpResponse<Response>) => this.processToken(res));
   }
 
   private exchange(): Observable<HttpResponse<Response>> {
     return this.httpClient.get<Response>(`${environment.baseUrl}/auth/api/oauth/exchange`, { observe: 'response' });
+  }
+
+  login(email: string, password: string): Observable<void> {
+    return this.httpClient
+      .post<Response>(
+        `${environment.baseUrl}/auth/api/standard/exchange`,
+        {
+          email,
+          password,
+        },
+        { observe: 'response' }
+      )
+      .pipe(map(res => this.processToken(res)));
+  }
+
+  private processToken(res: HttpResponse<Response>) {
+    this.jwtService.setAuthToken(res.headers.get(AuthService.X_TOKEN));
+    this._permissions = this.jwtService.getUserPermissions();
+    this._isLoadingPermissions = false;
   }
 
   redirectToGoogleLogin(): void {

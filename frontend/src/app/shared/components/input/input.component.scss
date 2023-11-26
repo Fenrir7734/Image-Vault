@@ -1,0 +1,38 @@
+@import "../../../../scss/utils/variables";
+
+:host ::ng-deep .p-float-label {
+  margin-top: $gap-4;
+  font-size: 1rem;
+}
+
+.icon {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+
+  &-info {
+    color: $color-light-gray;
+  }
+
+  &-error {
+    color: $color-red;
+  }
+}
+
+.small {
+  width: 10rem;
+}
+
+.medium {
+  width: 20rem;
+}
+
+.large {
+  width: 30rem;
+}
+
+.fill {
+  width: 100% !important;
+}
