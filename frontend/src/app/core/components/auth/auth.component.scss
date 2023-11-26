@@ -20,29 +20,7 @@
     max-width: 75%;
   }
 
-  .login-form {
-    margin: 0 auto;
-    min-width: 18rem;
-    display: flex;
-    flex-direction: column;
-    gap: $gap-3;
-  }
-
-  .sso-container {
-    display: flex;
-    flex-direction: row;
-    align-items: stretch;
-    padding: 0;
-    margin: $gap-3 0 0;
-    gap: $gap-3;
-
-    app-button {
-      flex: 1;
-    }
-  }
-
-  .login-container {
-    margin: 0 auto;
+  .form {
     min-width: 18rem;
   }
 }

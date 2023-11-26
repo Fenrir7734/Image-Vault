@@ -1,0 +1,20 @@
+<form class="container" [formGroup]="form">
+  <app-input formControlName="email"
+             label="{{ 'AUTH.email' | translate }}"
+             labelType="placeholder"
+             size="fill"
+             errorMsg="{{ 'AUTH.validation.email-required' | translate }}"
+             [error]="isEmailInvalid()"/>
+  <app-input formControlName="password"
+             label="{{ 'AUTH.password' | translate }}"
+             labelType="placeholder"
+             type="password"
+             size="fill"
+             errorMsg="{{ 'AUTH.validation.password-required' | translate }}"
+             [error]="isPasswordInvalid()"/>
+  <app-button label="{{ 'AUTH.sign-in' | translate }}"
+              size="fill"
+              look="inverted"
+              [loading]="loading"
+              (clicked)="login()"/>
+</form>

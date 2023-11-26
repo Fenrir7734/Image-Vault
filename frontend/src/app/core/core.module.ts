@@ -15,6 +15,8 @@ import { SidenavNavigationComponent } from './components/sidenav/sidenav-navigat
 import { SidenavControlComponent } from './components/sidenav/sidenav-control/sidenav-control.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MessageService } from 'primeng/api';
+import { SocialLoginComponent } from './components/auth/social-login/social-login.component';
+import { StandardLoginComponent } from './components/auth/standard-login/standard-login.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +28,8 @@ import { MessageService } from 'primeng/api';
     SidenavUserComponent,
     SidenavNavigationComponent,
     SidenavControlComponent,
+    SocialLoginComponent,
+    StandardLoginComponent,
   ],
   imports: [
     SharedModule,

@@ -3,30 +3,8 @@
     <app-translate></app-translate>
   </header>
   <img class="logo" src="../../../../assets/logo/iv-logo-large-white.png" alt="Logo">
-  <section>
-    <form class="login-form" [formGroup]="form">
-      <app-input formControlName="email"
-                 label="{{ 'AUTH.email' | translate }}"
-                 labelType="placeholder"
-                 size="fill"
-                 errorMsg="{{ 'AUTH.validation.email-required' | translate }}"
-                 [error]="isEmailInvalid()"/>
-      <app-input formControlName="password"
-                 label="{{ 'AUTH.password' | translate }}"
-                 labelType="placeholder"
-                 type="password"
-                 size="fill"
-                 errorMsg="{{ 'AUTH.validation.password-required' | translate }}"
-                 [error]="isPasswordInvalid()"/>
-      <app-button label="{{ 'AUTH.sign-in' | translate }}"
-                  size="fill"
-                  look="inverted"
-                  [loading]="loading"
-                  (clicked)="login()"/>
-    </form>
-    <div class="sso-container">
-      <app-button [icon]="googleIcon" size="fill" look="inverted" (clicked)="auth.redirectToGoogleLogin()"/>
-      <app-button [icon]="facebookIcon" size="fill" look="inverted" (clicked)="auth.redirectToFacebookLogin()"/>
-    </div>
+  <section class="form">
+    <app-standard-login></app-standard-login>
+    <app-social-login></app-social-login>
   </section>
 </div>
