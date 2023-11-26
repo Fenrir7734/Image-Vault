@@ -11,17 +11,20 @@ $avatar-size: 8rem;
   transition: linear 0.2s;
   border-radius: 100%;
   background-color: $color-white;
+  overflow: hidden;
 
   &--img {
     width: $avatar-size;
     height: $avatar-size;
+    margin: 0 -.2rem;
     border-radius: 100%;
   }
 
   &--overlay {
     position: absolute;
-    bottom: 0;
-    top: 0;
+    top: 50%;
+    bottom: 50%;
+    transform: translateY(-50%);
     width: $avatar-size;
     height: $avatar-size;
     border-radius: 100%;
