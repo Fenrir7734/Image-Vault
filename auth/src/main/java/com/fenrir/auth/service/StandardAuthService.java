@@ -53,13 +53,12 @@ public class StandardAuthService {
         user.setName(registerRequest.getUsername());
         user.setEmail(registerRequest.getEmail());
         user.setPassword(passwordEncoder.encode(registerRequest.getPassword()));
-        user.setRole(getUserRole(userRepository.existsAnyUser()));
+        user.setRole(getUserRole());
         return user;
     }
 
-    private RoleEntity getUserRole(boolean existsAnyUser) {
-        final Role role = existsAnyUser ? Role.VIEWER : Role.ADMIN;
-        return roleRepository.getByName(role.getName());
+    private RoleEntity getUserRole() {
+        return roleRepository.getByName(Role.VIEWER.getName());
     }
 
     @Transactional

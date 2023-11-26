@@ -80,20 +80,18 @@ public class OAuth2UserService extends DefaultOAuth2UserService {
     }
 
     private UserEntity registerUser(OAuth2UserInfo oAuth2User) {
-        final boolean existsAnyUser = userRepository.existsAnyUser();
         UserEntity user = new UserEntity();
         user.setAuthType(oAuth2User.getProvider().name());
         user.setExternalId(oAuth2User.getId());
         user.setExternalName(oAuth2User.getName());
         user.setEmail(oAuth2User.getEmail());
-        user.setVerified(!existsAnyUser);
-        user.setRole(getUserRole(existsAnyUser));
+        user.setVerified(false);
+        user.setRole(getUserRole());
         return userRepository.saveAndFlush(user);
     }
 
-    private RoleEntity getUserRole(boolean existsAnyUser) {
-        final Role role = existsAnyUser ? Role.VIEWER : Role.ADMIN;
-        return roleRepository.getByName(role.getName());
+    private RoleEntity getUserRole() {
+        return roleRepository.getByName(Role.VIEWER.getName());
     }
 
     private void assertAccountVerified(UserPrincipal userPrincipal) {
