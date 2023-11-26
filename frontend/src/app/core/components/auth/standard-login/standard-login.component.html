@@ -2,6 +2,7 @@
   <app-input formControlName="email"
              label="{{ 'AUTH.email' | translate }}"
              labelType="placeholder"
+             type="email"
              size="fill"
              errorMsg="{{ 'AUTH.validation.email-required' | translate }}"
              [error]="isEmailInvalid()"/>
