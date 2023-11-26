@@ -55,6 +55,8 @@
     "required": "Required",
     "minlength": "Minimum length is {{requiredLength}}",
     "maxlength": "Maximum length is {{requiredLength}}",
-    "email": "Incorrect email address"
+    "email": "Incorrect email address",
+    "weakPassword": "Password must be at least 8 characters and include at least one lowercase letter, one uppercase letter, one digit, and one special character",
+    "passwordMatch": "Passwords are not the same"
   }
 }

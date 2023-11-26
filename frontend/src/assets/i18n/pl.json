@@ -55,6 +55,8 @@
     "required": "Wartość jest wymagana",
     "minlength": "Minimalna długość to {{requiredLength}}",
     "maxlength": "Maksymalna długość to {{requiredLength}}",
-    "email": "Niepoprawny adres e-mail"
+    "email": "Niepoprawny adres e-mail",
+    "weakPassword": "Hasło musi mieć co najmniej 8 znaków i zawierać co najmniej jedną małą literę, jedną wielką literę, jedną cyfrę i jeden znak specjalny",
+    "passwordMatch": "Hasła nie są takie same"
   }
 }

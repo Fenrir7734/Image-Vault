@@ -17,6 +17,8 @@ export class ValidationErrorMessagePipe implements PipeTransform {
     switch (errorKey) {
       case 'required':
       case 'email':
+      case 'weakPassword':
+      case 'passwordMatch':
         return this.translate.instant(`VALIDATION.${errorKey}`);
       case 'minlength':
       case 'maxlength':
