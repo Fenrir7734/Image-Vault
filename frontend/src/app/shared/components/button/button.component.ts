@@ -9,6 +9,7 @@ import { IconDefinition } from '@fortawesome/free-brands-svg-icons';
 export class ButtonComponent {
   @Input() label: string;
   @Input() disabled = false;
+  @Input() loading = false;
   @Input() look: 'full' | 'hollow' | 'inverted' = 'full';
   @Input() size: 'small' | 'medium' | 'large' | 'fill' = 'medium';
   @Input() icon: IconDefinition;

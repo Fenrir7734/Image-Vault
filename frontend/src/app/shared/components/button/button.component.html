@@ -1,7 +1,11 @@
 <p-button class="button"
-          [ngClass]="[size, look]"
-          [label]="label"
-          [disabled]="disabled"
+          [ngClass]="[size, look, loading ? 'loading' : '']"
+          [label]="loading ? '' : label"
+          [disabled]="disabled || loading"
           (onClick)="click()">
   <fa-icon *ngIf="icon" class="icon" [icon]="icon"/>
+  <p-progressSpinner *ngIf="loading"
+                     styleClass="{{ 'button-spinner spinner-' + look }}"
+                     strokeWidth="4"
+                     animationDuration=".5s"></p-progressSpinner>
 </p-button>

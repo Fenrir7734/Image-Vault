@@ -11,6 +11,7 @@ import { MessageService } from 'primeng/api';
   styleUrls: ['./auth.component.scss'],
 })
 export class AuthComponent {
+  loading = false;
   googleIcon = faGoogle;
   facebookIcon = faFacebook;
 
@@ -32,10 +33,11 @@ export class AuthComponent {
       return;
     }
 
+    this.loading = true;
     this.auth.login(emailControl?.value ?? '', passwordControl?.value ?? '').subscribe({
-      next: () => {},
-      error: () => {},
-      complete: () => {},
+      complete: () => {
+        this.loading = false;
+      },
     });
   }
 

@@ -32,6 +32,23 @@
   }
 }
 
+:host ::ng-deep .loading .p-button:disabled {
+  opacity: 1;
+}
+
+:host ::ng-deep p-progressSpinner {
+  margin: 0 auto;
+}
+
+:host ::ng-deep .spinner-full .p-progress-spinner-circle {
+  stroke: $color-white !important;
+}
+
+:host ::ng-deep .spinner-hollow .p-progress-spinner-circle,
+:host ::ng-deep .spinner-inverted .p-progress-spinner-circle {
+  stroke: $color-primary !important;
+}
+
 .small    { @include button-size(2rem) }
 .medium   { @include button-size(10rem) }
 .large    { @include button-size(15rem) }

@@ -2,7 +2,7 @@
   <div class="translate">
     <app-translate></app-translate>
   </div>
-  <img class="logo" src="../../../../assets/logo/iv-logo-large-white.png" alt="logo">
+  <img class="logo" src="../../../../assets/logo/iv-logo-large-white.png" alt="Logo">
 
   <div class="login-container">
     <div class="std-container" [formGroup]="form">
@@ -19,12 +19,15 @@
                  size="fill"
                  errorMsg="{{ 'AUTH.validation.password-required' | translate }}"
                  [error]="isPasswordInvalid()"/>
-      <app-button label="{{ 'AUTH.sign-in' | translate }}" size="fill" look="inverted" (clicked)="login()"/>
+      <app-button label="{{ 'AUTH.sign-in' | translate }}"
+                  size="fill"
+                  look="inverted"
+                  [loading]="loading"
+                  (clicked)="login()"/>
     </div>
     <div class="sso-container">
       <app-button [icon]="googleIcon" size="fill" look="inverted" (clicked)="auth.redirectToGoogleLogin()"/>
       <app-button [icon]="facebookIcon" size="fill" look="inverted" (clicked)="auth.redirectToFacebookLogin()"/>
     </div>
   </div>
-
 </div>
