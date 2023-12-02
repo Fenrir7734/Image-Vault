@@ -7,5 +7,14 @@ import { Album } from '../../model/album';
   styleUrls: ['./album-list.component.scss'],
 })
 export class AlbumListComponent {
-  @Input() albums: Album[];
+  @Input() albums: Album[] | null;
+  @Input() type: 'card' | 'square' = 'card';
+
+  isCard() {
+    return this.type === 'card';
+  }
+
+  isSquare() {
+    return this.type === 'square';
+  }
 }

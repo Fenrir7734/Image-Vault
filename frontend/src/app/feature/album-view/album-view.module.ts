@@ -7,9 +7,10 @@ import { AlbumState } from './state/album.state';
 import { SharedModule } from '../../shared/shared.module';
 import { AlbumCardComponent } from './component/album-list/album-card/album-card.component';
 import { AlbumListComponent } from './component/album-list/album-list.component';
+import { AlbumSquareComponent } from './component/album-list/album-square/album-square.component';
 
 @NgModule({
-  declarations: [AlbumViewComponent, AlbumCardComponent, AlbumListComponent],
+  declarations: [AlbumViewComponent, AlbumCardComponent, AlbumListComponent, AlbumSquareComponent],
   imports: [
     RouterModule.forChild([
       {

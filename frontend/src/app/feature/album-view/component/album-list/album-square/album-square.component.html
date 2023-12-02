@@ -1,0 +1,9 @@
+<div class="square" (click)="navigateToAlbum()">
+  <fa-icon [icon]="albumIcon" size="7x"/>
+  <div class="title">
+    <div class="text">{{ name }}</div>
+    <div class="ellipsis" (click)="openContextMenu()">
+      <fa-icon [icon]="ellipsisIcon"/>
+    </div>
+  </div>
+</div>
