@@ -1,9 +1,9 @@
-<div class="card">
+<div class="card" (click)="navigateToAlbum()">
   <div class="title">
     <fa-icon [icon]="albumIcon" [ngClass]="'color'"/>
     <span class="text">{{ name }}</span>
   </div>
-  <div class="ellipsis">
+  <div class="ellipsis" (click)="openContextMenu()">
     <fa-icon [icon]="ellipsisIcon"/>
   </div>
 </div>

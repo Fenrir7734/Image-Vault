@@ -1,0 +1,7 @@
+<app-scrollable heightOffset="5rem">
+  <div class="container">
+    <app-album-card *ngFor="let album of albums"
+                    [id]="album.id"
+                    [name]="album.name"></app-album-card>
+  </div>
+</app-scrollable>

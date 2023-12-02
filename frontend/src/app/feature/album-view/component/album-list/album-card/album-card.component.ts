@@ -12,4 +12,8 @@ export class AlbumCardComponent {
 
   albumIcon = faFolder;
   ellipsisIcon = faEllipsisVertical;
+
+  navigateToAlbum() {}
+
+  openContextMenu() {}
 }

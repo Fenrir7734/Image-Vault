@@ -1,9 +1,5 @@
 <app-header header="{{ 'ALBUM-VIEW.albums' | translate }}"></app-header>
-<app-scrollable heightOffset="5rem">
-  <div class="container">
-    <app-album-card *ngFor="let album of albums$ | async" [id]="album.id" [name]="album.name"></app-album-card>
-  </div>
-</app-scrollable>
+<app-album-list [albums]="albums$ | async"></app-album-list>
 <ng-container *ngIf="pagination$ | async as pagination">
   <app-paginator *ngIf="!onlyPage(pagination)"
                  (pageChange)="changePage($event)"
