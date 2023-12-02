@@ -43,6 +43,9 @@
       "created-at": "Created at"
     }
   },
+  "ALBUM-VIEW": {
+    "albums": "Albums"
+  },
   "ROLE": {
     "ADMIN": "Admin",
     "USER": "User",

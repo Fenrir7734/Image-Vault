@@ -43,6 +43,9 @@
       "created-at": "Data utworzenia"
     }
   },
+  "ALBUM-VIEW": {
+    "albums": "Albumy"
+  },
   "ROLE": {
     "ADMIN": "Administrator",
     "USER": "Użytkownik",

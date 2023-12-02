@@ -14,6 +14,7 @@ import { InputComponent } from './components/input/input.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ButtonComponent } from './components/button/button.component';
 import { ValidationErrorMessagePipe } from './pipes/validation-error-message.pipe';
+import { HeaderComponent } from './components/header/header.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { ValidationErrorMessagePipe } from './pipes/validation-error-message.pip
     ValidationErrorMessagePipe,
     InputComponent,
     ButtonComponent,
+    HeaderComponent,
   ],
   imports: [TranslateModule, MaterialModule, PrimeNgModule, CommonModule, FontAwesomeModule],
   exports: [
@@ -44,6 +46,7 @@ import { ValidationErrorMessagePipe } from './pipes/validation-error-message.pip
     ValidationErrorMessagePipe,
     InputComponent,
     ButtonComponent,
+    HeaderComponent,
   ],
 })
 export class SharedModule {}
