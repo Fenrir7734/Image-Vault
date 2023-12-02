@@ -25,6 +25,7 @@
     font-weight: $font-weight-3;
 
     .text {
+      align-self: center;
       text-overflow: ellipsis;
       overflow: hidden;
     }
