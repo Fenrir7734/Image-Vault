@@ -1,1 +1,4 @@
 <app-header header="{{ 'ALBUM-VIEW.albums' | translate }}"></app-header>
+<div class="container">
+  <app-album-card *ngFor="let album of albums$ | async" [id]="album.id" [name]="album.name"></app-album-card>
+</div>

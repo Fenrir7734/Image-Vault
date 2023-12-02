@@ -19,7 +19,7 @@ export class AlbumViewComponent implements OnInit {
 
   ngOnInit(): void {
     if (this.store.selectSnapshot(AlbumState.getAll)?.length === 0) {
-      this.store.dispatch(new AlbumStateActions.GetPage(PageRequest.first(20)));
+      this.store.dispatch(new AlbumStateActions.GetPage(PageRequest.first(100)));
     }
   }
 }
