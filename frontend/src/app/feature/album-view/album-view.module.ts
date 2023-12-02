@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { authGuard } from '../../core/guards/auth.guard';
-import { AlbumViewComponent } from './album-view.component';
+import { AlbumViewComponent } from './component/album-view.component';
 
 @NgModule({
   declarations: [AlbumViewComponent],
