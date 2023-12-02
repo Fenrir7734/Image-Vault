@@ -1,7 +1,7 @@
 <app-header header="{{ 'ALBUM-VIEW.albums' | translate }}">
   <app-icon-button *ngIf="isLayout('square')"
                    (clicked)="switchLayout('card')"
-                   [icon]="albumIcon"></app-icon-button>
+                   icon="grid-3x2-gap-fill"></app-icon-button>
   <app-icon-button *ngIf="isLayout('card')"
                    (clicked)="switchLayout('square')"
                    icon="grid-fill"></app-icon-button>
