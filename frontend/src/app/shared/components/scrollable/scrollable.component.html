@@ -1,5 +1,4 @@
-<ng-scrollbar class="container"
-              [style.height.rem]="height"
+<ng-scrollbar [style.height.rem]="height"
               [ngStyle]="{'height': 'calc(100% - ' + heightOffset + ')'}">
-  <ng-content></ng-content>
+  <ng-content class="content"></ng-content>
 </ng-scrollbar>
