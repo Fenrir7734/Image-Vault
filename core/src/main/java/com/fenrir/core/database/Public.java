@@ -7,6 +7,7 @@ package com.fenrir.core.database;
 import com.fenrir.core.database.tables.AlbumVisibility;
 import com.fenrir.core.database.tables.Albums;
 import com.fenrir.core.database.tables.Roles;
+import com.fenrir.core.database.tables.Startup;
 import com.fenrir.core.database.tables.Users;
 
 import java.util.Arrays;
@@ -46,6 +47,11 @@ public class Public extends SchemaImpl {
     public final Roles ROLES = Roles.ROLES;
 
     /**
+     * The table <code>public.startup</code>.
+     */
+    public final Startup STARTUP = Startup.STARTUP;
+
+    /**
      * The table <code>public.users</code>.
      */
     public final Users USERS = Users.USERS;
@@ -69,6 +75,7 @@ public class Public extends SchemaImpl {
             AlbumVisibility.ALBUM_VISIBILITY,
             Albums.ALBUMS,
             Roles.ROLES,
+            Startup.STARTUP,
             Users.USERS
         );
     }

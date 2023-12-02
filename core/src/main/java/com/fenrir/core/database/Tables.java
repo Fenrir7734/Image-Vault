@@ -7,6 +7,7 @@ package com.fenrir.core.database;
 import com.fenrir.core.database.tables.AlbumVisibility;
 import com.fenrir.core.database.tables.Albums;
 import com.fenrir.core.database.tables.Roles;
+import com.fenrir.core.database.tables.Startup;
 import com.fenrir.core.database.tables.Users;
 
 
@@ -30,6 +31,11 @@ public class Tables {
      * The table <code>public.roles</code>.
      */
     public static final Roles ROLES = Roles.ROLES;
+
+    /**
+     * The table <code>public.startup</code>.
+     */
+    public static final Startup STARTUP = Startup.STARTUP;
 
     /**
      * The table <code>public.users</code>.
