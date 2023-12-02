@@ -65,8 +65,8 @@ public class AlbumRepositoryImpl extends AbstractGeneralRepository<Albums, Album
                 albums.ID,
                 albums.NAME,
                 albums.DESCRIPTION,
-                users.ID,
-                users.NAME,
+                users.ID.as(AlbumEntity.Fields.ownerId),
+                users.NAME.as(AlbumEntity.Fields.owner),
                 visibilities.NAME.convert(albumVisibilityConverter()).as(AlbumEntity.Fields.visibility),
                 albums.UPDATED_AT,
                 albums.CREATED_AT
