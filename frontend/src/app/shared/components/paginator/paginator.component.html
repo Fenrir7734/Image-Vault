@@ -1,0 +1,5 @@
+<div *ngIf="pagination" class="container">
+  <p-paginator (onPageChange)="onPageChange($event)"
+               [rows]="pagination.size"
+               [totalRecords]="pagination.totalElements"></p-paginator>
+</div>

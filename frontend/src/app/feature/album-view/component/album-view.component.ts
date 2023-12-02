@@ -5,6 +5,7 @@ import { Observable } from 'rxjs';
 import { Album } from '../model/album';
 import { AlbumStateActions } from '../state/album.actions';
 import { PageRequest } from '../../../shared/models/page/page-request';
+import { Pagination } from '../../../shared/models/page/page';
 
 @Component({
   selector: 'app-album-view',
@@ -15,11 +16,22 @@ export class AlbumViewComponent implements OnInit {
   @Select(AlbumState.getAll)
   albums$: Observable<Album[]>;
 
+  @Select(AlbumState.getPagination)
+  pagination$: Observable<Pagination>;
+
   constructor(private store: Store) {}
 
   ngOnInit(): void {
     if (this.store.selectSnapshot(AlbumState.getAll)?.length === 0) {
       this.store.dispatch(new AlbumStateActions.GetPage(PageRequest.first(100)));
     }
+  }
+
+  changePage(pageRequest: PageRequest) {
+    this.store.dispatch(new AlbumStateActions.GetPage(pageRequest));
+  }
+
+  onlyPage(pagination: Pagination): boolean {
+    return pagination.first && pagination.last;
   }
 }

@@ -45,6 +45,7 @@ public class AlbumRepositoryImpl extends AbstractGeneralRepository<Albums, Album
                 .innerJoin(visibilities).on(visibilities.ID.eq(albums.VISIBILITY_ID))
                 .innerJoin(users).on(users.ID.eq(albums.OWNER_ID))
                 .where(condition);
+        final long count = dsl.fetchCount(select);
 
         return new PageImpl<>(
                 select.orderBy(sortFields(albums, pageable.getSort(), albums.NAME.asc()))
@@ -52,7 +53,7 @@ public class AlbumRepositoryImpl extends AbstractGeneralRepository<Albums, Album
                         .limit(pageable.getPageSize())
                         .fetchInto(AlbumEntity.class),
                 pageable,
-                dsl.fetchCount(select)
+                count
         );
     }
 

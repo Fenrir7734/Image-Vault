@@ -15,6 +15,9 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ButtonComponent } from './components/button/button.component';
 import { ValidationErrorMessagePipe } from './pipes/validation-error-message.pipe';
 import { HeaderComponent } from './components/header/header.component';
+import { ScrollableComponent } from './components/scrollable/scrollable.component';
+import { NgScrollbarModule } from 'ngx-scrollbar';
+import { PaginatorComponent } from './components/paginator/paginator.component';
 
 @NgModule({
   declarations: [
@@ -28,8 +31,10 @@ import { HeaderComponent } from './components/header/header.component';
     InputComponent,
     ButtonComponent,
     HeaderComponent,
+    ScrollableComponent,
+    PaginatorComponent,
   ],
-  imports: [TranslateModule, MaterialModule, PrimeNgModule, CommonModule, FontAwesomeModule],
+  imports: [TranslateModule, MaterialModule, PrimeNgModule, CommonModule, FontAwesomeModule, NgScrollbarModule],
   exports: [
     CommonModule,
     MaterialModule,
@@ -47,6 +52,8 @@ import { HeaderComponent } from './components/header/header.component';
     InputComponent,
     ButtonComponent,
     HeaderComponent,
+    ScrollableComponent,
+    PaginatorComponent,
   ],
 })
 export class SharedModule {}

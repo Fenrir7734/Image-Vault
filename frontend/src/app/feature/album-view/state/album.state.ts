@@ -5,11 +5,13 @@ import { Album } from '../model/album';
 import { AlbumService } from '../service/album.service';
 import { AlbumStateActions } from './album.actions';
 import GetPage = AlbumStateActions.GetPage;
+import { Pagination } from '../../../shared/models/page/page';
 
 @State<AlbumStateModel>({
   name: 'album',
   defaults: {
     albums: [],
+    pagination: undefined,
   },
 })
 @Injectable()
@@ -19,6 +21,11 @@ export class AlbumState {
     return state.albums;
   }
 
+  @Selector()
+  static getPagination(state: AlbumStateModel): Pagination | undefined {
+    return state.pagination;
+  }
+
   constructor(private albumService: AlbumService) {}
 
   @Action(AlbumStateActions.GetPage)
@@ -26,6 +33,7 @@ export class AlbumState {
     return this.albumService.fetchAlbums(payload.pageRequest).subscribe(page => {
       ctx.setState({
         albums: page.content,
+        pagination: page,
       });
     });
   }

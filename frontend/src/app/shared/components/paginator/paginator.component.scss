@@ -1,0 +1,22 @@
+@import "../../../../scss/utils/variables";
+
+.container {
+  height: 2rem;
+  width: 100%;
+  background-color: transparent;
+  padding-top: $gap-2;
+  padding-bottom: $gap-2;
+  margin: 0;
+}
+
+:host ::ng-deep .p-paginator {
+  background-color: transparent;
+  border: none;
+  border-radius: 0;
+  padding: 0;
+}
+
+:host ::ng-deep .p-paginator button,
+:host ::ng-deep .p-paginator .p-paginator-pages button {
+  border-radius: 100%;
+}

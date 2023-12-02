@@ -2,10 +2,12 @@ export interface Page<T> {
   content: T[];
   pageable: Pageable;
   size: number;
+  sort: Sort[];
   number: number;
   numberOfElements: number;
   totalPages: number;
   totalElements: number;
+  empty: boolean;
   last: boolean;
   first: boolean;
 }
@@ -20,6 +22,8 @@ export interface Pageable {
 }
 
 export interface Sort {
-  sorted: boolean;
-  unsorted: boolean;
+  direction: string;
+  property: string;
 }
+
+export type Pagination = Omit<Page<any>, 'content'>;
