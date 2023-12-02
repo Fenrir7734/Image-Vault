@@ -26,12 +26,17 @@ export class PaginatorComponent implements OnInit {
       return;
     }
 
-    const pageRequest = PageRequest.of(
-      event.page,
-      this.pagination.size,
-      [this.pagination.sort[0]?.property],
-      this.pagination.sort[0]?.direction === 'ASC' ? Direction.ASC : Direction.DESC
+    if (this.pagination.pageable.pageNumber === event.page) {
+      return;
+    }
+
+    this.pageChange.emit(
+      PageRequest.of(
+        event.page,
+        this.pagination.size,
+        [this.pagination.sort[0]?.property],
+        this.pagination.sort[0]?.direction === 'ASC' ? Direction.ASC : Direction.DESC
+      )
     );
-    this.pageChange.emit(pageRequest);
   }
 }
