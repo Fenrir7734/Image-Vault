@@ -6,6 +6,8 @@ import { Album } from '../model/album';
 import { AlbumStateActions } from '../state/album.actions';
 import { PageRequest } from '../../../shared/models/page/page-request';
 import { Pagination } from '../../../shared/models/page/page';
+import { AlbumListLayout } from './album-list/album-list-layout';
+import { faFolder } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-album-view',
@@ -18,6 +20,9 @@ export class AlbumViewComponent implements OnInit {
 
   @Select(AlbumState.getPagination)
   pagination$: Observable<Pagination>;
+
+  layout: AlbumListLayout = 'square';
+  albumIcon = faFolder;
 
   constructor(private store: Store) {}
 
@@ -33,5 +38,13 @@ export class AlbumViewComponent implements OnInit {
 
   onlyPage(pagination: Pagination): boolean {
     return pagination.first && pagination.last;
+  }
+
+  isLayout(layout: AlbumListLayout): boolean {
+    return this.layout === layout;
+  }
+
+  switchLayout(layout: AlbumListLayout) {
+    this.layout = layout;
   }
 }

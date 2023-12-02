@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { Album } from '../../model/album';
+import { AlbumListLayout } from './album-list-layout';
 
 @Component({
   selector: 'app-album-list',
@@ -8,13 +9,13 @@ import { Album } from '../../model/album';
 })
 export class AlbumListComponent {
   @Input() albums: Album[] | null;
-  @Input() type: 'card' | 'square' = 'card';
+  @Input() layout: AlbumListLayout = 'card';
 
   isCard() {
-    return this.type === 'card';
+    return this.layout === 'card';
   }
 
   isSquare() {
-    return this.type === 'square';
+    return this.layout === 'square';
   }
 }

@@ -1,0 +1,4 @@
+<div class="button" (click)="click()">
+  <i-bs *ngIf="isBootstrapIcon()" [name]="asBootstrapIcon()" width="25" height="25"></i-bs>
+  <fa-icon *ngIf="isFontAwesomeIcon()" [icon]="asFontAwesomeIcon()"></fa-icon>
+</div>

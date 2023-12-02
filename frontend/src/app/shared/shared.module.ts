@@ -18,6 +18,8 @@ import { HeaderComponent } from './components/header/header.component';
 import { ScrollableComponent } from './components/scrollable/scrollable.component';
 import { NgScrollbarModule } from 'ngx-scrollbar';
 import { PaginatorComponent } from './components/paginator/paginator.component';
+import { allIcons, NgxBootstrapIconsModule } from 'ngx-bootstrap-icons';
+import { IconButtonComponent } from './components/icon-button/icon-button.component';
 
 @NgModule({
   declarations: [
@@ -30,16 +32,26 @@ import { PaginatorComponent } from './components/paginator/paginator.component';
     ValidationErrorMessagePipe,
     InputComponent,
     ButtonComponent,
+    IconButtonComponent,
     HeaderComponent,
     ScrollableComponent,
     PaginatorComponent,
   ],
-  imports: [TranslateModule, MaterialModule, PrimeNgModule, CommonModule, FontAwesomeModule, NgScrollbarModule],
+  imports: [
+    TranslateModule,
+    MaterialModule,
+    PrimeNgModule,
+    CommonModule,
+    FontAwesomeModule,
+    NgScrollbarModule,
+    NgxBootstrapIconsModule.pick(allIcons),
+  ],
   exports: [
     CommonModule,
     MaterialModule,
     PrimeNgModule,
     FontAwesomeModule,
+    NgxBootstrapIconsModule,
     HttpClientModule,
     TranslateModule,
     SpinnerComponent,
@@ -51,6 +63,7 @@ import { PaginatorComponent } from './components/paginator/paginator.component';
     ValidationErrorMessagePipe,
     InputComponent,
     ButtonComponent,
+    IconButtonComponent,
     HeaderComponent,
     ScrollableComponent,
     PaginatorComponent,
