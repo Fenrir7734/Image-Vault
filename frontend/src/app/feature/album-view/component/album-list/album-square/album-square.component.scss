@@ -18,6 +18,15 @@
     filter: brightness(0.9);
   }
 
+  .public {
+    position: relative;
+    left: 2.5em;
+    bottom: -8.5em;
+    margin-top: -3em;
+    font-size: 0.9em;
+    color: $color-white;
+  }
+
   .title {
     @include no-overflow();
     display: flex;
@@ -51,6 +60,10 @@
 
 :host ::ng-deep fa-icon svg {
   color: $color-black;
+}
+
+:host ::ng-deep .public svg {
+  color: $color-white !important;
 }
 
 :host ::ng-deep .ellipsis fa-icon svg {

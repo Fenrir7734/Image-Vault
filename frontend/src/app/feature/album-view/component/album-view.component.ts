@@ -19,7 +19,7 @@ export class AlbumViewComponent implements OnInit {
   @Select(AlbumState.getPagination)
   pagination$: Observable<Pagination>;
 
-  layout: AlbumListLayout = 'card';
+  layout: AlbumListLayout = 'square';
 
   constructor(private store: Store) {}
 

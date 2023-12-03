@@ -9,7 +9,7 @@ import { AlbumListLayout } from './album-list-layout';
 })
 export class AlbumListComponent {
   @Input() albums: Album[] | null;
-  @Input() layout: AlbumListLayout = 'card';
+  @Input() layout: AlbumListLayout = 'square';
 
   isCard() {
     return this.layout === 'card';

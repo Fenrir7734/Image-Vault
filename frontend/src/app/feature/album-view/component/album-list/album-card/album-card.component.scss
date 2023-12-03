@@ -24,6 +24,15 @@
     gap: $gap-3;
     font-weight: $font-weight-3;
 
+    .public {
+      position: relative;
+      left: -0.1em;
+      bottom: -0.7em;
+      margin-left: -1.9em;
+      font-size: 0.9em;
+      color: $color-white;
+    }
+
     .text {
       align-self: center;
       text-overflow: ellipsis;

@@ -1,7 +1,8 @@
 <div class="square" (click)="navigateToAlbum()">
+  <fa-icon *ngIf="isPublic()" [icon]="usersIcon" class="public"/>
   <fa-icon [icon]="albumIcon" size="7x"/>
   <div class="title">
-    <div class="text">{{ name }}</div>
+    <div class="text">{{ album.name }}</div>
     <div class="ellipsis" (click)="openContextMenu()">
       <fa-icon [icon]="ellipsisIcon"/>
     </div>
