@@ -18,4 +18,8 @@ export class AlbumListComponent {
   isSquare() {
     return this.layout === 'square';
   }
+
+  isRow() {
+    return this.layout === 'row';
+  }
 }

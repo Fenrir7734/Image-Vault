@@ -1,0 +1,16 @@
+<div class="card">
+  <div class="title">
+    <fa-icon [icon]="albumIcon" size="2x"/>
+    <fa-icon *ngIf="isPublic()" [icon]="usersIcon" class="public"/>
+    <span class="text">{{ album.name }}</span>
+  </div>
+  <div class="owner">
+    <img src="assets/img/avatar-placeholder.png"/>
+    <span class="">{{ album.owner }}</span>
+  </div>
+  <span class="date" matTooltip="{{ 'ALBUM-VIEW.creation-date' | translate }}">{{ album.createdAt | date: 'yyyy-MM-dd' }}</span>
+  <span class="date" matTooltip="{{ 'ALBUM-VIEW.modification-date' | translate }}">{{ album.updatedAt | date: 'yyyy-MM-dd' }}</span>
+  <div class="ellipsis" (click)="openContextMenu()">
+    <fa-icon [icon]="ellipsisIcon"/>
+  </div>
+</div>

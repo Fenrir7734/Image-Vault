@@ -1,10 +1,13 @@
 <app-header header="{{ 'ALBUM-VIEW.albums' | translate }}">
-  <app-icon-button *ngIf="isLayout('square')"
+  <app-icon-button *ngIf="isLayout('row')"
                    (clicked)="switchLayout('card')"
                    icon="grid-3x2-gap-fill"></app-icon-button>
   <app-icon-button *ngIf="isLayout('card')"
                    (clicked)="switchLayout('square')"
                    icon="grid-fill"></app-icon-button>
+  <app-icon-button *ngIf="isLayout('square')"
+                   (clicked)="switchLayout('row')"
+                   icon="list"></app-icon-button>
 </app-header>
 <app-album-list [albums]="albums$ | async" [layout]="layout"></app-album-list>
 <ng-container *ngIf="pagination$ | async as pagination">

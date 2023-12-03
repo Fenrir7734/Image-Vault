@@ -1,1 +1,1 @@
-export type AlbumListLayout = 'card' | 'square';
+export type AlbumListLayout = 'card' | 'square' | 'row';
