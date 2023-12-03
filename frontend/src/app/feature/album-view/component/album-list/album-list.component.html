@@ -1,0 +1,8 @@
+<app-scrollable *ngIf="albums" heightOffset="5rem">
+  <div *ngIf="isCard()" class="card-container">
+    <app-album-card *ngFor="let album of albums" [album]="album"></app-album-card>
+  </div>
+  <div *ngIf="isSquare()" class="square-container">
+    <app-album-square *ngFor="let album of albums" [album]="album"></app-album-square>
+  </div>
+</app-scrollable>

@@ -1,6 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Select, Store } from '@ngxs/store';
-import { UserState } from '../state/user-state';
+import { UserState } from '../state/user.state';
 import { AuthService } from '../../../core/services/auth.service';
 import { firstValueFrom, Observable, Subject } from 'rxjs';
 import { User } from '../model/user';

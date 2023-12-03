@@ -15,7 +15,7 @@ $avatar-size: 4rem;
     width: $avatar-size;
     height: $avatar-size;
     border: 0.2rem solid rgb($color-gray, 0.4);
-    transition: linear 0.2s;
+    transition: linear $transition-duration;
     border-radius: 100%;
     background-color: $color-white;
     overflow: hidden;
@@ -46,7 +46,7 @@ $avatar-size: 4rem;
       font-size: $font-size-4;
       font-weight: 500;
       margin-bottom: 0.2rem;
-      transition: linear 0.2s;
+      transition: linear $transition-duration;
 
       &:hover {
         cursor: pointer;

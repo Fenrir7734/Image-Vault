@@ -11,7 +11,7 @@
   border-left: 2px solid transparent;
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
-  transition: linear 0.2s;
+  transition: linear $transition-duration;
 
   & > *:nth-child(3) {
     margin-left: $gap-4;

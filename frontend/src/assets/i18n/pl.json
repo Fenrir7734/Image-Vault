@@ -7,16 +7,17 @@
     "cancel": "Anuluj"
   },
   "AUTH": {
+    "username": "Nazwa użytkownika",
     "email": "E-mail",
     "password": "Hasło",
+    "repeat-password": "Powtórz hasło",
+    "go-back": "Wróć",
     "sign-in": "Zaloguj się",
     "sign-up": "Zarejestruj się",
     "google-login": "Zaloguj z Google",
     "facebook-login": "Zaloguj z Facebook",
-    "validation": {
-      "email-required": "Ares e-mail jest wymagany",
-      "password-required": "Hasło jest wymagane"
-    }
+    "registered": "Zarejestrowano",
+    "registration-successful": "Pomyślnie zarejestrowano"
   },
   "SIDENAV": {
     "home": "Strona Główna",
@@ -42,6 +43,9 @@
       "created-at": "Data utworzenia"
     }
   },
+  "ALBUM-VIEW": {
+    "albums": "Albumy"
+  },
   "ROLE": {
     "ADMIN": "Administrator",
     "USER": "Użytkownik",
@@ -49,5 +53,13 @@
   },
   "ERROR": {
     "AUTH-1009": "Błędne dane uwierzytelniające"
+  },
+  "VALIDATION": {
+    "required": "Wartość jest wymagana",
+    "minlength": "Minimalna długość to {{requiredLength}}",
+    "maxlength": "Maksymalna długość to {{requiredLength}}",
+    "email": "Niepoprawny adres e-mail",
+    "weakPassword": "Hasło musi mieć co najmniej 8 znaków i zawierać co najmniej jedną małą literę, jedną wielką literę, jedną cyfrę i jeden znak specjalny",
+    "passwordMatch": "Hasła nie są takie same"
   }
 }

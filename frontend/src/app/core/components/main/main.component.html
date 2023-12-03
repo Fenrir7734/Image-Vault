@@ -3,7 +3,7 @@
   <mat-sidenav class="sidenav-container__content" position="start" [opened]="opened" [mode]="mode">
     <app-sidenav [user]="currentUser$ | async"></app-sidenav>
   </mat-sidenav>
-  <mat-sidenav-content>
+  <mat-sidenav-content class="content-container">
     <router-outlet></router-outlet>
   </mat-sidenav-content>
 </mat-sidenav-container>

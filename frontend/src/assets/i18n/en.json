@@ -7,16 +7,17 @@
     "cancel": "Cancel"
   },
   "AUTH": {
+    "username": "Username",
     "email": "E-mail",
     "password": "Password",
+    "repeat-password": "Repeat password",
+    "go-back": "Go back",
     "sign-in": "Sign in",
     "sign-up": "Sign up",
     "google-login": "Login with Google",
     "facebook-login": "Login with Facebook",
-    "validation": {
-      "email-required": "E-mail is required",
-      "password-required": "Password is required"
-    }
+    "registered": "Registered",
+    "registration-successful": "Successfully registered"
   },
   "SIDENAV": {
     "home": "Home Page",
@@ -42,6 +43,9 @@
       "created-at": "Created at"
     }
   },
+  "ALBUM-VIEW": {
+    "albums": "Albums"
+  },
   "ROLE": {
     "ADMIN": "Admin",
     "USER": "User",
@@ -49,5 +53,13 @@
   },
   "ERROR": {
     "AUTH-1009": "Wrong credentials"
+  },
+  "VALIDATION": {
+    "required": "Required",
+    "minlength": "Minimum length is {{requiredLength}}",
+    "maxlength": "Maximum length is {{requiredLength}}",
+    "email": "Incorrect email address",
+    "weakPassword": "Password must be at least 8 characters and include at least one lowercase letter, one uppercase letter, one digit, and one special character",
+    "passwordMatch": "Passwords are not the same"
   }
 }

@@ -1,0 +1,10 @@
+<div class="card" (click)="navigateToAlbum()">
+  <div class="title">
+    <fa-icon [icon]="albumIcon" size="2x"/>
+    <fa-icon *ngIf="isPublic()" [icon]="usersIcon" class="public"/>
+    <span class="text">{{ album.name }}</span>
+  </div>
+  <div class="ellipsis" (click)="openContextMenu()">
+    <fa-icon [icon]="ellipsisIcon"/>
+  </div>
+</div>

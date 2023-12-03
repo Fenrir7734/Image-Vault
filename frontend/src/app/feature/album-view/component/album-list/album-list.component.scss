@@ -1,0 +1,15 @@
+@import "utils/variables";
+
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+  grid-gap: 10px;
+  justify-content: center;
+}
+
+.square-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr));
+  grid-gap: 10px;
+  justify-content: center;
+}

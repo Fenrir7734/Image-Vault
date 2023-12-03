@@ -1,0 +1,14 @@
+@import "../../../../../scss/utils/variables";
+
+.container {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  padding: 0;
+  margin: $gap-3 0 0;
+  gap: $gap-3;
+
+  app-button {
+    flex: 1;
+  }
+}
