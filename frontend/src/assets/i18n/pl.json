@@ -46,7 +46,13 @@
   "ALBUM-VIEW": {
     "albums": "Albumy",
     "creation-date": "Data utworzenia",
-    "modification-date": "Data modyfikacji"
+    "modification-date": "Data modyfikacji",
+    "ACTIONS": {
+      "remove": "Usuń",
+      "share": "Udostępnij",
+      "download": "Pobierz",
+      "rename": "Zmień nazwę"
+    }
   },
   "ROLE": {
     "ADMIN": "Administrator",

@@ -3,8 +3,9 @@
   <fa-icon [icon]="albumIcon" size="7x"/>
   <div class="title">
     <div class="text">{{ album.name }}</div>
-    <div class="ellipsis" (click)="openContextMenu()">
+    <div class="ellipsis" (click)="menu.toggle($event)">
       <fa-icon [icon]="ellipsisIcon"/>
+      <p-menu #menu [model]="items" [popup]="true" appendTo="body"/>
     </div>
   </div>
 </div>

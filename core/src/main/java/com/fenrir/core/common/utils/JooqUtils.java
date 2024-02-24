@@ -31,12 +31,12 @@ public class JooqUtils {
     }
 
     public static <T> Condition optional(T value, Function<T, Condition> func) {
-        final boolean isEmptyOrNull = value == null || isEmptyCollection(value) || isBlankString(value);
+        boolean isEmptyOrNull = value == null || isEmptyCollection(value) || isBlankString(value);
         return isEmptyOrNull ? noCondition() : func.apply(value);
     }
 
     public static Collection<SortField<?>> sortFields(Table<?> table, Sort sort) {
-        final Field<?> defaultField = table.field(0);
+        Field<?> defaultField = table.field(0);
         return defaultField != null
                 ? sortFields(table, sort, defaultField.sort(SortOrder.ASC))
                 : Collections.emptyList();
@@ -47,21 +47,21 @@ public class JooqUtils {
             Sort sort,
             SortField<?>... defaultSortFields) {
 
-        final Set<Field<?>> fields = table.fieldStream().collect(Collectors.toSet());
-        final Collection<SortField<?>> sortFields = findSortFields(fields, sort);
+        Set<Field<?>> fields = table.fieldStream().collect(Collectors.toSet());
+        Collection<SortField<?>> sortFields = findSortFields(fields, sort);
         return sortFields.isEmpty() ? sortFields : Arrays.asList(defaultSortFields);
     }
 
     private static Collection<SortField<?>> findSortFields(Collection<Field<?>> fields, Sort sort) {
-        final List<SortField<?>> sortFields = new ArrayList<>();
+        List<SortField<?>> sortFields = new ArrayList<>();
 
         for (Sort.Order order: sort) {
             fields.stream()
                     .filter(field -> StringUtils.equalsIgnoreCase(field.getName(), order.getProperty()))
                     .findAny()
                     .ifPresent(field -> {
-                        final SortOrder sortOrder = order.getDirection().isDescending() ? SortOrder.DESC : SortOrder.ASC;
-                        final SortField<?> sortField = field.sort(sortOrder);
+                        SortOrder sortOrder = order.getDirection().isDescending() ? SortOrder.DESC : SortOrder.ASC;
+                        SortField<?> sortField = field.sort(sortOrder);
                         sortFields.add(sortField);
                     });
         }

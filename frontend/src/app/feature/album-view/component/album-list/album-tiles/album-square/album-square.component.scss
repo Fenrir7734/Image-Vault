@@ -1,40 +1,42 @@
-@import "../../../../../../scss/utils/variables";
-@import "../../../../../../scss/utils/mixins";
+@import "utils/variables";
+@import "utils/mixins";
+@import "components/menu";
 
-.card {
+.square {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
   justify-content: space-between;
   background-color: $color-bright-white;
   border-radius: $border-radius;
   box-shadow: none;
   transition: $transition-duration filter;
-  height: 3rem;
-  padding: 0.7rem;
+  height: 10rem;
+  padding: 0.7rem 1rem;
 
   &:hover {
     cursor: pointer;
     filter: brightness(0.9);
   }
 
+  .public {
+    position: relative;
+    left: 2.5em;
+    bottom: -8.5em;
+    margin-top: -3em;
+    font-size: 0.9em;
+    color: $color-white;
+  }
+
   .title {
     @include no-overflow();
     display: flex;
+    justify-content: space-between;
+    width: 100%;
     gap: $gap-3;
     font-weight: $font-weight-3;
 
-    .public {
-      position: relative;
-      left: -0.1em;
-      bottom: -0.7em;
-      margin-left: -1.9em;
-      font-size: 0.9em;
-      color: $color-white;
-    }
-
     .text {
-      align-self: center;
       text-overflow: ellipsis;
       overflow: hidden;
     }
@@ -55,6 +57,14 @@
       filter: brightness(0.8);
     }
   }
+}
+
+:host ::ng-deep fa-icon svg {
+  color: $color-black;
+}
+
+:host ::ng-deep .public svg {
+  color: $color-white !important;
 }
 
 :host ::ng-deep .ellipsis fa-icon svg {

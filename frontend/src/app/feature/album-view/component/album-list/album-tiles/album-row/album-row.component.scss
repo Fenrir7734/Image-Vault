@@ -1,44 +1,60 @@
-@import "../../../../../../scss/utils/variables";
-@import "../../../../../../scss/utils/mixins";
+@import "utils/variables";
+@import "utils/mixins";
+@import "components/menu";
 
-.square {
+.card {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   justify-content: space-between;
   background-color: $color-bright-white;
   border-radius: $border-radius;
   box-shadow: none;
   transition: $transition-duration filter;
-  height: 10rem;
+  height: 3rem;
   padding: 0.7rem 1rem;
+  margin: $gap-3 0;
 
   &:hover {
     cursor: pointer;
     filter: brightness(0.9);
   }
 
-  .public {
-    position: relative;
-    left: 2.5em;
-    bottom: -8.5em;
-    margin-top: -3em;
-    font-size: 0.9em;
-    color: $color-white;
-  }
-
   .title {
     @include no-overflow();
     display: flex;
-    justify-content: space-between;
-    width: 100%;
     gap: $gap-3;
     font-weight: $font-weight-3;
+    width: 10rem;
 
-    .text {
-      text-overflow: ellipsis;
+    .public {
+      position: relative;
+      left: -0.1em;
+      bottom: -0.7em;
+      margin-left: -1.9em;
+      font-size: 0.9em;
+      color: $color-white;
+    }
+  }
+
+  .owner {
+    display: flex;
+    gap: $gap-3;
+    align-items: center;
+    width: 10rem;
+
+    img {
+      align-self: center;
+      width: 1.5rem;
+      height: 1.5rem;
+      border-radius: 100%;
+      background-color: $color-white;
       overflow: hidden;
     }
+  }
+
+  .date {
+    width: 5rem;
   }
 
   .ellipsis {
@@ -58,14 +74,14 @@
   }
 }
 
-:host ::ng-deep fa-icon svg {
-  color: $color-black;
+.text {
+  align-self: center;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 
-:host ::ng-deep .public svg {
-  color: $color-white !important;
-}
-
-:host ::ng-deep .ellipsis fa-icon svg {
-  vertical-align: -0.25em !important;
+:host ::ng-deep {
+  .ellipsis fa-icon svg {
+    vertical-align: -0.25em !important;
+  }
 }

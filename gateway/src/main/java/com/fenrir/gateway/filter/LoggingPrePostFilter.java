@@ -45,17 +45,17 @@ public class LoggingPrePostFilter implements GlobalFilter {
     }
 
     private void logRequest(ServerHttpRequest request, String uuid) {
-        final String ipAddress = extractClientIP(request);
-        final String method = request.getMethod().toString();
-        final String path = request.getPath().toString();
-        final String headers = maskSensitiveHeaders(request.getHeaders()).toSingleValueMap().toString();
+        String ipAddress = extractClientIP(request);
+        String method = request.getMethod().toString();
+        String path = request.getPath().toString();
+        String headers = maskSensitiveHeaders(request.getHeaders()).toSingleValueMap().toString();
         log.info("[{}]\t[REQUEST]\t{} {} {} {}", uuid, ipAddress, method, path, headers);
     }
 
     private void logResponse(ServerHttpResponse response, String uuid, long startTime) {
-        final long elapsedTime = System.currentTimeMillis() - startTime;
-        final String headers = maskSensitiveHeaders(response.getHeaders()).toSingleValueMap().toString();
-        final int status = getHttpStatusCode(response);
+        long elapsedTime = System.currentTimeMillis() - startTime;
+        String headers = maskSensitiveHeaders(response.getHeaders()).toSingleValueMap().toString();
+        int status = getHttpStatusCode(response);
         log.info("[{}]\t[RESPONSE]\t{} {} ({} ms)", uuid, status, headers, elapsedTime);
     }
 

@@ -1,4 +1,5 @@
 <app-header header="{{ 'ALBUM-VIEW.albums' | translate }}">
+  <app-icon-button (clicked)="openCreateAlbum()" icon="plus"></app-icon-button>
   <app-icon-button *ngIf="isLayout('row')"
                    (clicked)="switchLayout('card')"
                    icon="grid-3x2-gap-fill"></app-icon-button>
@@ -15,3 +16,4 @@
                  (pageChange)="changePage($event)"
                  [pagination]="pagination"></app-paginator>
 </ng-container>
+

@@ -44,4 +44,6 @@ export class AlbumViewComponent implements OnInit {
   switchLayout(layout: AlbumListLayout) {
     this.layout = layout;
   }
+
+  openCreateAlbum() {}
 }

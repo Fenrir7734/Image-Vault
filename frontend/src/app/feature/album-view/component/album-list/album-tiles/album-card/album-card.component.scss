@@ -1,5 +1,6 @@
-@import "../../../../../../scss/utils/variables";
-@import "../../../../../../scss/utils/mixins";
+@import "utils/variables";
+@import "utils/mixins";
+@import "components/menu";
 
 .card {
   display: flex;
@@ -11,8 +12,7 @@
   box-shadow: none;
   transition: $transition-duration filter;
   height: 3rem;
-  padding: 0.7rem 1rem;
-  margin: $gap-3 0;
+  padding: 0.7rem;
 
   &:hover {
     cursor: pointer;
@@ -24,7 +24,6 @@
     display: flex;
     gap: $gap-3;
     font-weight: $font-weight-3;
-    width: 10rem;
 
     .public {
       position: relative;
@@ -34,26 +33,12 @@
       font-size: 0.9em;
       color: $color-white;
     }
-  }
 
-  .owner {
-    display: flex;
-    gap: $gap-3;
-    align-items: center;
-    width: 10rem;
-
-    img {
+    .text {
       align-self: center;
-      width: 1.5rem;
-      height: 1.5rem;
-      border-radius: 100%;
-      background-color: $color-white;
+      text-overflow: ellipsis;
       overflow: hidden;
     }
-  }
-
-  .date {
-    width: 5rem;
   }
 
   .ellipsis {
@@ -71,12 +56,6 @@
       filter: brightness(0.8);
     }
   }
-}
-
-.text {
-  align-self: center;
-  text-overflow: ellipsis;
-  overflow: hidden;
 }
 
 :host ::ng-deep .ellipsis fa-icon svg {
