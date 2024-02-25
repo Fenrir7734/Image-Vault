@@ -31,7 +31,7 @@ export abstract class AbstractAlbumTile {
         icon: 'pi pi-download',
       },
       {
-        label: this.translationOf('rename'),
+        label: this.translationOf('edit'),
         icon: 'pi pi-pencil',
       },
       {

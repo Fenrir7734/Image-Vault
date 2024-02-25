@@ -6,7 +6,7 @@ import com.fenrir.core.database.tables.AlbumVisibility;
 import com.fenrir.core.database.tables.records.AlbumVisibilityRecord;
 import com.fenrir.core.database.tables.records.AlbumsRecord;
 import com.fenrir.core.domain.AlbumEntity;
-import com.fenrir.core.feature.album.dto.CreateAlbumRequest;
+import com.fenrir.core.feature.album.dto.CreateEditAlbumRequest;
 import com.fenrir.core.repository.AlbumRepository;
 import com.fenrir.core.repository.AlbumVisibilityRepository;
 import lombok.RequiredArgsConstructor;
@@ -25,7 +25,7 @@ class AlbumService {
         return albumRepository.findAll(authenticationFacade.getUserId(), pageable);
     }
 
-    public void createAlbum(CreateAlbumRequest album, Pageable pageable) {
+    public void createAlbum(CreateEditAlbumRequest album, Pageable pageable) {
         Long visibilityId = albumVisibilityRepository
                 .findOne(album.getVisibility().name(), AlbumVisibility.ALBUM_VISIBILITY.NAME)
                 .map(AlbumVisibilityRecord::getId)
