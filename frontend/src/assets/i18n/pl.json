@@ -44,7 +44,15 @@
     }
   },
   "ALBUM-VIEW": {
-    "albums": "Albumy"
+    "albums": "Albumy",
+    "creation-date": "Data utworzenia",
+    "modification-date": "Data modyfikacji",
+    "ACTIONS": {
+      "remove": "Usuń",
+      "share": "Udostępnij",
+      "download": "Pobierz",
+      "edit": "Edytuj"
+    }
   },
   "ROLE": {
     "ADMIN": "Administrator",

@@ -5,4 +5,7 @@
   <div *ngIf="isSquare()" class="square-container">
     <app-album-square *ngFor="let album of albums" [album]="album"></app-album-square>
   </div>
+  <div *ngIf="isRow()" class="">
+    <app-album-row *ngFor="let album of albums" [album]="album"></app-album-row>
+  </div>
 </app-scrollable>

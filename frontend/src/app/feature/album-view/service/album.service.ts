@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { SpinnerService } from '../../../shared/components/spinner/spinner.service';
 import { HttpClient } from '@angular/common/http';
-import { map, Observable } from 'rxjs';
-import { Album } from '../model/album';
+import { Observable, map } from 'rxjs';
+import { Album, CreateAlbum, EditAlbum } from '../model/album';
 import { SpinnerState } from '../../../shared/components/spinner/spinner-state';
 import { environment } from '../../../../environments/environment';
 import { Page } from '../../../shared/models/page/page';
@@ -24,5 +24,25 @@ export class AlbumService {
           return result;
         })
       );
+  }
+
+  public createAlbum(album: CreateAlbum): Observable<void> {
+    this.loading.start(SpinnerState.LOADING);
+    return this.http.post<void>(`${environment.baseUrl}/core/api/albums`, album).pipe(
+      map(result => {
+        this.loading.stop();
+        return result;
+      })
+    );
+  }
+
+  public editAlbum(album: EditAlbum): Observable<void> {
+    this.loading.start(SpinnerState.LOADING);
+    return this.http.put<void>(`${environment.baseUrl}/core/api/albums`, album).pipe(
+      map(result => {
+        this.loading.stop();
+        return result;
+      })
+    );
   }
 }

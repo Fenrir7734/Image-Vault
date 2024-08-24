@@ -1,4 +1,4 @@
-import { NewAlbum } from '../model/album';
+import { CreateAlbum, EditAlbum } from '../model/album';
 import { PageRequest } from '../../../shared/models/page/page-request';
 
 export namespace AlbumStateActions {
@@ -11,6 +11,12 @@ export namespace AlbumStateActions {
   export class Create {
     static readonly type = '[Album] Create album';
 
-    constructor(public album: NewAlbum) {}
+    constructor(public album: CreateAlbum) {}
+  }
+
+  export class Edit {
+    static readonly type = '[Album] Edit album';
+
+    constructor(public album: EditAlbum) {}
   }
 }

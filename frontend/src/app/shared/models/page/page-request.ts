@@ -1,4 +1,5 @@
 import { HttpParams } from '@angular/common/http';
+import { Pagination } from './page';
 
 export class PageRequest {
   private constructor(
@@ -18,6 +19,15 @@ export class PageRequest {
 
   public static of(page: number, size: number, sort: string[] = [], direction = Direction.ASC): PageRequest {
     return new PageRequest(page, size, sort, direction);
+  }
+
+  public static fromPagination(pagination: Pagination) {
+    return PageRequest.of(
+      pagination.pageable.pageNumber,
+      pagination.pageable.pageSize,
+      [pagination.pageable.sort.property],
+      pagination.pageable.sort.direction === 'ASC' ? Direction.ASC : Direction.DESC
+    );
   }
 
   public next(): PageRequest {

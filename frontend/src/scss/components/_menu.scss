@@ -1,0 +1,18 @@
+@import "utils/variables";
+
+::ng-deep .p-menu .p-reset {
+  font-size: $font-size-1 !important;
+
+  .p-menuitem .p-menuitem-link {
+    padding: 0.5rem 0.75rem;
+
+    .p-menuitem-text,
+    .p-menuitem-icon {
+      color: $color-gray;
+    }
+
+    .p-menuitem-text {
+      margin-top: 0.2rem;
+    }
+  }
+}

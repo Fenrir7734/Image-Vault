@@ -1,7 +1,7 @@
 package com.fenrir.core.feature.album;
 
 import com.fenrir.core.domain.AlbumEntity;
-import com.fenrir.core.feature.album.dto.CreateAlbumRequest;
+import com.fenrir.core.feature.album.dto.CreateEditAlbumRequest;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -25,7 +25,7 @@ class AlbumController {
     }
 
     @PostMapping
-    ResponseEntity<?> create(@RequestBody CreateAlbumRequest album) {
+    ResponseEntity<AlbumEntity> create(@RequestBody CreateEditAlbumRequest album) {
         return ResponseEntity.ok().build();
     }
 }

@@ -40,12 +40,12 @@ public class OAuth2UserService extends DefaultOAuth2UserService {
     }
 
     private OAuth2User processOAuth2User(OAuth2UserRequest oAuth2UserRequest, OAuth2User oAuth2User) {
-        final OAuth2UserInfo oAuth2UserInfo = toOAuth2UserInfo(oAuth2UserRequest, oAuth2User);
-        final UserEntity user = userRepository.findByEmail(oAuth2UserInfo.getEmail())
+        OAuth2UserInfo oAuth2UserInfo = toOAuth2UserInfo(oAuth2UserRequest, oAuth2User);
+        UserEntity user = userRepository.findByEmail(oAuth2UserInfo.getEmail())
                 .map(u -> checkProvider(u, oAuth2UserInfo))
                 .orElseGet(() -> registerUser(oAuth2UserInfo));
-        final Map<String, Object> attributes = oAuth2User.getAttributes();
-        final UserPrincipal userPrincipal = UserPrincipal.create(user, attributes);
+        Map<String, Object> attributes = oAuth2User.getAttributes();
+        UserPrincipal userPrincipal = UserPrincipal.create(user, attributes);
 
         assertAccountVerified(userPrincipal);
         assertAccountEnabled(userPrincipal);
@@ -54,8 +54,8 @@ public class OAuth2UserService extends DefaultOAuth2UserService {
     }
 
     private UserEntity checkProvider(UserEntity user, OAuth2UserInfo oAuth2UserInfo) {
-        final String oauth2Provider = oAuth2UserInfo.getProvider().name();
-        final String userAuthType = user.getAuthType();
+        String oauth2Provider = oAuth2UserInfo.getProvider().name();
+        String userAuthType = user.getAuthType();
 
         if (!oauth2Provider.equals(userAuthType)) {
             throw new OAuth2AuthenticationProcessingException(
@@ -65,8 +65,8 @@ public class OAuth2UserService extends DefaultOAuth2UserService {
     }
 
     private OAuth2UserInfo toOAuth2UserInfo(OAuth2UserRequest oAuth2UserRequest, OAuth2User oAuth2User) {
-        final String registrationId = oAuth2UserRequest.getClientRegistration().getRegistrationId();
-        final Map<String, Object> attributes = oAuth2User.getAttributes();
+        String registrationId = oAuth2UserRequest.getClientRegistration().getRegistrationId();
+        Map<String, Object> attributes = oAuth2User.getAttributes();
         return toOAuth2UserInfo(registrationId, attributes);
     }
 

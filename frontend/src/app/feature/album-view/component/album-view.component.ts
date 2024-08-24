@@ -19,7 +19,7 @@ export class AlbumViewComponent implements OnInit {
   @Select(AlbumState.getPagination)
   pagination$: Observable<Pagination>;
 
-  layout: AlbumListLayout = 'square';
+  layout: AlbumListLayout = 'row';
 
   constructor(private store: Store) {}
 
@@ -44,4 +44,6 @@ export class AlbumViewComponent implements OnInit {
   switchLayout(layout: AlbumListLayout) {
     this.layout = layout;
   }
+
+  openCreateAlbum() {}
 }

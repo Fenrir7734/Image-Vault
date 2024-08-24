@@ -4,7 +4,7 @@ import com.fenrir.core.domain.enums.AlbumVisibility;
 import lombok.Data;
 
 @Data
-public class CreateAlbumRequest {
+public class CreateEditAlbumRequest {
     private String name;
     private String description;
     private AlbumVisibility visibility;

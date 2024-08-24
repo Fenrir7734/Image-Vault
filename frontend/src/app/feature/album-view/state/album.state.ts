@@ -6,6 +6,9 @@ import { AlbumService } from '../service/album.service';
 import { AlbumStateActions } from './album.actions';
 import GetPage = AlbumStateActions.GetPage;
 import { Pagination } from '../../../shared/models/page/page';
+import { PageRequest } from '../../../shared/models/page/page-request';
+import Edit = AlbumStateActions.Edit;
+import Create = AlbumStateActions.Create;
 
 @State<AlbumStateModel>({
   name: 'album',
@@ -36,5 +39,24 @@ export class AlbumState {
         pagination: page,
       });
     });
+  }
+
+  @Action(AlbumStateActions.Create)
+  create(ctx: StateContext<AlbumStateModel>, payload: Create) {
+    return this.albumService.createAlbum(payload.album).subscribe(() => {
+      ctx.dispatch(new GetPage(this.getPageRequest(ctx)));
+    });
+  }
+
+  @Action(AlbumStateActions.Edit)
+  edit(ctx: StateContext<AlbumStateModel>, payload: Edit) {
+    return this.albumService.editAlbum(payload.album).subscribe(() => {
+      ctx.dispatch(new GetPage(this.getPageRequest(ctx)));
+    });
+  }
+
+  private getPageRequest(ctx: StateContext<AlbumStateModel>): PageRequest {
+    const pagination = ctx.getState().pagination;
+    return pagination ? PageRequest.fromPagination(pagination) : PageRequest.default();
   }
 }

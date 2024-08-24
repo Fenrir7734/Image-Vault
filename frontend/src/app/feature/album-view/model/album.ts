@@ -11,4 +11,5 @@ export interface Album {
   createdAt: Date;
 }
 
-export type NewAlbum = Pick<Album, 'name' | 'description' | 'visibility'>;
+export type CreateAlbum = Pick<Album, 'name' | 'description' | 'visibility'>;
+export type EditAlbum = CreateAlbum;
