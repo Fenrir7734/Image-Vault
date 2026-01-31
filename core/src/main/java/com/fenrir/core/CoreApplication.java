@@ -11,8 +11,7 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 @EnableConfigurationProperties(JwtConfig.class)
 public class CoreApplication {
 
-    public static void main(String[] args) {
+    static void main(String[] args) {
         SpringApplication.run(CoreApplication.class, args);
     }
-
 }

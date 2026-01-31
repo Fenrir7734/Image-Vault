@@ -14,14 +14,14 @@ spring:
       client:
         registration:
           google:
-            client-id:
-            client-secret:
+            client-id: ${GOOGLE_CLIENT_ID:placeholder}
+            client-secret: ${GOOGLE_SECRET_ID:placeholder}
             redirect-uri: http://localhost:8080/login/oauth2/code/google
             authorization-grant-type: authorization_code
             scope: profile, email
           facebook:
-            client-id:
-            client-secret:
+            client-id: ${FACEBOOK_CLIENT_ID:placeholder}
+            client-secret: ${FACEBOOK_CLIENT_SECRET:plcaholder}
             redirect-uri: http://localhost:8080/login/oauth2/code/facebook
             authorization-grant-type: authorization_code
             scope: public_profile, email
@@ -37,5 +37,5 @@ jasypt:
     algorithm: PBEWITHHMACSHA512ANDAES_256
 
 jwt:
-  secret:
+  secret: ${JWT_SECRET:FZNdMfiY82GLxjG6WF77xuN34E8izBFqatWVY5hU1Pv0LxeLLZjAkh7dKi0Z}
   expiration: 172800000
