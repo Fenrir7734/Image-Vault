@@ -15,7 +15,7 @@ springdoc:
     operations-sorter: method
 
 jwt:
-  secret: 'FZNdMfiY82GLxjG6WF77xuN34E8izBFqatWVY5hU1Pv0LxeLLZjAkh7dKi0Z'
+  secret: ${JWT_SECRET:FZNdMfiY82GLxjG6WF77xuN34E8izBFqatWVY5hU1Pv0LxeLLZjAkh7dKi0Z}
   expiration: 172800000
 
 logging:
